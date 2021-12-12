@@ -11,7 +11,6 @@ body {
     font-size: 1.6rem;
     line-height: 2rem;
     letter-spacing: 0.05rem;
-    color: #020534;
 }
 h1,
 h2,
@@ -95,7 +94,7 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: translateY(-160px);
 }
 .main {
-    min-height: 320px;
+    margin-top: 120px;
     padding-bottom: 60px;
 }
 .section {
@@ -2064,6 +2063,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .footer {
     padding: 50px 0 30px 0;
     width: 100%;
+    color: #fff;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/main/footer-bg.png);

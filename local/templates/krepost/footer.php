@@ -1,14 +1,27 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
+<? if (defined('ERROR_404') || ERROR_404 == 'Y'){
+    require_once("footer_404.php");
+} else { ?>
+
 </main>
 
 <footer class="footer">
     <div class="footer-info">
         <div class="container container_p0">
             <div class="footer-info__main">
+            <?if($IsMainPage):?>
+                <span class="footer-info__logo-link">
+            <?else:?>
                 <a href="/" class="footer-info__logo-link">
+            <?endif;?>
                     <img class="footer-info__logo" src="<?= SITE_TEMPLATE_PATH ?>/img/main/logo.svg" alt="Группа компаний Крепость">
+            <?if($IsMainPage):?>
+                </span>
+            <?else:?>
                 </a>
+            <?endif;?>
+
                 <ul class="footer-info__social-list">
                     <li class="footer-info__social-item">
                         <a href="https://instagram.com/krepost.73" class="footer-info__social-link" target="_blank">
@@ -28,15 +41,33 @@
                 </ul>
                 <ul class="footer-info__contacts-list">
                     <li class="footer-info__contacts-item">
-                        <a href="tel:+78422265301" class="footer-info__contacts-link">+7 (8422) 26-53-01</a>
+                        <?$APPLICATION->IncludeFile(
+                            SITE_DIR."include/phone_number.php",
+                            array(),
+                            array(
+                                "MODE" => "text"
+                            )
+                        );?>
                     </li>
                     <li class="footer-info__contacts-item">
-                        <a href="mailto:krepost-gk@mail.ru" class="footer-info__contacts-link">krepost-gk@mail.ru</a>
+                        <?$APPLICATION->IncludeFile(
+                            SITE_DIR."include/main_email.php",
+                            array(),
+                            array(
+                                "MODE" => "text"
+                            )
+                        );?>
                     </li>
                 </ul>
             </div>
             <div class="footer-info__copyright-wrapper">
-                <p class="footer-info__copyright">© 2013 - 2021 Интернет магазин охранного оборудования "ГК "Крепость", Ульяновск</p>
+                <p class="footer-info__copyright">© 2013 - <?php echo date( 'Y' ); ?> <?$APPLICATION->IncludeFile(
+                        SITE_DIR."include/copyright_text.php",
+                        array(),
+                        array(
+                            "MODE" => "text"
+                        )
+                    );?></p>
                 <a href="https://agatech.ru/" class="footer-info__copyright-link" target="_blank">
                     <img class="footer-info__copyright-img" src="<?= SITE_TEMPLATE_PATH ?>/img/main/footer-agatech.png" alt="AGATECH">
                 </a>
@@ -208,3 +239,4 @@
 
 </body>
 </html>
+<?}?>

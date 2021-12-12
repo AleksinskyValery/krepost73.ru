@@ -1,0 +1,1 @@
+<video class="company__video" src="#" poster="<?= SITE_TEMPLATE_PATH ?>/img/company/video-preview.jpg" data-video=""></video>

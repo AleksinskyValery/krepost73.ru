@@ -1,6 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 $CurDir = $APPLICATION->GetCurDir();
 $CurUri = $APPLICATION->GetCurUri();
+$IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 ?>
 <!doctype html>
 <html lang="ru">
@@ -13,6 +14,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/mdb.min.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/fontawesome.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/solid.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/new.css');
 // Пример подключения JS
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/luxon/luxon.min.js');
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/lodash/lodash.min.js');
@@ -37,9 +39,17 @@ $APPLICATION->ShowPanel();
             <div class="row">
                 <div class="col-sm-2 col-12">
                     <div class="header-info__logo-wrapper">
-                        <a href="/" class="header-info__logo-link">
-                            <img class="header-info__logo logo" src="<?= SITE_TEMPLATE_PATH ?>/img/main/logo.svg" alt="Группа компаний Крепость">
-                        </a>
+                        <?if($IsMainPage):?>
+                            <span class="header-info__logo-link">
+                        <?else:?>
+                            <a href="/" class="header-info__logo-link">
+                        <?endif;?>
+                                <img class="header-info__logo logo" src="<?= SITE_TEMPLATE_PATH ?>/img/main/logo.svg" alt="Группа компаний Крепость">
+                        <?if($IsMainPage):?>
+                            </span>
+                        <?else:?>
+                            </a>
+                        <?endif;?>
                     </div>
                 </div>
                 <div class="col-md-1 col-2 catalogue">
@@ -285,7 +295,13 @@ $APPLICATION->ShowPanel();
                 <div class="col-2 header-info__phones-wrapper">
                     <ul class="header-info__phones-list">
                         <li class="header-info__phones-item">
-                            <a href="tel:+78422265301" class="header-info__phones-link">+7 (8422) 26-53-01</a>
+                            <?$APPLICATION->IncludeFile(
+                                SITE_DIR."include/phone_number.php",
+                                array(),
+                                array(
+                                     "MODE" => "text"
+                                )
+                            );?>
                         </li>
                     </ul>
                 </div>
@@ -340,4 +356,20 @@ $APPLICATION->ShowPanel();
     </nav>
 </header>
 
+<?if(!$IsMainPage):?>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:breadcrumb",
+        "breadcrumbs",
+        Array(
+            "PATH" => "",
+            "SITE_ID" => "s1",
+            "START_FROM" => "0"
+        )
+    );?>
+<?endif?>
+<?if(!$IsMainPage):?>
+<div class="container">
+    <h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
+</div>
+<?endif?>
 <main class="main">

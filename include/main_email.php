@@ -1,0 +1,1 @@
+<a href="mailto:krepost-gk@mail.ru" class="footer-info__contacts-link">krepost-gk@mail.ru</a>
