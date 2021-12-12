@@ -323,37 +323,23 @@ $APPLICATION->ShowPanel();
             </div>
         </div>
     </div>
-    <nav class="header-menu">
-        <div class="container container_p0">
-            <div class="row">
-                <div class="col-sm-10 col-12 offset-sm-2 offset-0">
-                    <ul class="header-menu__list">
-                        <li class="header-menu__item">
-                            <a href="/page/company.html" class="header-menu__link">О компании</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/page/services.html" class="header-menu__link">Услуги</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/page/documents.html" class="header-menu__link">Документы</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/page/actions.html" class="header-menu__link">Акции</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/news" class="header-menu__link">Новости</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/page/delivery.html" class="header-menu__link">Доставка</a>
-                        </li>
-                        <li class="header-menu__item">
-                            <a href="/page/contacts.html" class="header-menu__link">Контакты</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?$APPLICATION->IncludeComponent(
+        "bitrix:menu",
+        "top_menu",
+        Array(
+            "ALLOW_MULTI_SELECT" => "N",
+            "CHILD_MENU_TYPE" => "left",
+            "COMPONENT_TEMPLATE" => ".default",
+            "DELAY" => "N",
+            "MAX_LEVEL" => "1",
+            "MENU_CACHE_GET_VARS" => "",
+            "MENU_CACHE_TIME" => "3600",
+            "MENU_CACHE_TYPE" => "N",
+            "MENU_CACHE_USE_GROUPS" => "Y",
+            "ROOT_MENU_TYPE" => "top",
+            "USE_EXT" => "N"
+        )
+    );?>
 </header>
 
 <?if(!$IsMainPage):?>
