@@ -1,4 +1,7 @@
 /* All pages*/
+.titleH1::after {
+    width: 9%;
+}
 .header-info__phones-item a {
     width: 100%;
     font-size: 1.6rem;
