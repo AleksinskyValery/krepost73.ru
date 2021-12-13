@@ -1855,65 +1855,7 @@ input[type="number"]::-webkit-outer-spin-button {
         display: block;
     }
 }
-.advantages {
-    margin-top: 110px;
-}
-.advantages__item {
-    display: flex;
-    align-items: center;
-    max-width: 265px;
-}
-.advantages__item:nth-child(2) .advantages__descr {
-    max-width: 166px;
-}
-.advantages__item:nth-child(4) .advantages__descr {
-    max-width: 184px;
-}
-.advantages__img {
-    max-width: 52px;
-    width: 100%;
-    max-height: 52px;
-}
-.advantages__descr {
-    margin-left: 10px;
-    font-weight: 500;
-    font-size: 1.5rem;
-    letter-spacing: 0.03em;
-}
-@media (max-width: 1199px) {
-    .advantages {
-        margin-top: 75px;
-    }
-    .advantages__img {
-        max-width: 45px;
-        max-height: 45px;
-    }
-    .advantages__descr {
-        font-size: 1.3rem;
-        line-height: 1.5rem;
-    }
-}
-@media (max-width: 991px) {
-    .advantages {
-        margin-top: 60px;
-    }
-    .advantages__list {
-        row-gap: 20px;
-    }
-}
-@media (max-width: 767px) {
-    .advantages {
-        margin-top: 50px;
-    }
-    .advantages__list li:nth-child(2) .advantages__descr {
-        max-width: 150px;
-    }
-}
-@media (max-width: 575px) {
-    .advantages {
-        margin-top: 30px;
-    }
-}
+
 .callback {
     margin-top: 35px;
 }
