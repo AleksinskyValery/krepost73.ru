@@ -5,6 +5,7 @@ $APPLICATION->SetTitle("ГК \"Крепость\" || Главная");
     <section class="promo">
         <div class="container">
             <h1>Главная страница</h1>
+            <p>Слайдер</p>
         </div>
     </section>
 <?$APPLICATION->IncludeComponent(
