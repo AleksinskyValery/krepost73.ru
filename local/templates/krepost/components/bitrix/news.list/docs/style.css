@@ -1,0 +1,113 @@
+.documents__list {
+    display: flex;
+    flex-wrap: wrap;
+    -moz-column-gap: 36px;
+    column-gap: 36px;
+    row-gap: 45px;
+    margin-top: 47px;
+}
+.documents__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    max-width: 160px!important;
+    width: 100%!important;
+    height: 291px;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+}
+@media (min-width: 992px) {
+    .documents__item:hover {
+        box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.2);
+    }
+    .documents__item:active {
+        opacity: 0.5;
+    }
+}
+.documents__item-button,
+.documents__item-link {
+    display: grid;
+    place-items: center;
+    width: 143px;
+    height: 202px;
+}
+.documents__item-button {
+    border: none;
+}
+.documents__item-img {
+    width: 100%;
+    height: auto;
+}
+.documents__item-title {
+    margin-top: 17px;
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    color: #020534;
+}
+.documents__fullimg {
+    max-width: 600px;
+    max-height: 600px;
+}
+@media (max-width: 1199px) {
+    .documents__item {
+        max-width: 210px!important;
+        height: 371px!important;
+    }
+    .documents__item-button,
+    .documents__item-link {
+        width: 189px;
+        height: 257px;
+    }
+    .documents__item-title {
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+    }
+}
+@media (max-width: 991px) {
+    .documents .titleH1::after {
+        width: 23%;
+    }
+    .documents__list {
+        -moz-column-gap: 30px;
+        column-gap: 30px;
+        row-gap: 23px;
+    }
+}
+@media (max-width: 767px) {
+    .documents__item {
+        max-width: 240px!important;
+        height: 399px!important;
+    }
+    .documents__item-button,
+    .documents__item-link {
+        width: 216px;
+        height: 297.14px;
+    }
+}
+@media (max-width: 575px) {
+    .documents .titleH1::after {
+        width: 45%;
+    }
+    .documents__list {
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .documents__item {
+        align-items: center;
+        max-width: unset;
+        width: 85%!important;
+        max-height: 399px;
+        height: auto;
+    }
+    .documents__item-button,
+    .documents__item-link {
+        max-width: 90%;
+        max-height: 297.14px;
+        height: auto;
+    }
+    .documents__fullimg {
+        max-width: 85%;
+        max-height: 85%;
+    }
+}

@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="container">
 <?$ElementID = $APPLICATION->IncludeComponent(
 	"bitrix:news.detail",
 	"",
@@ -68,4 +69,5 @@ $this->setFrameMode(true);
 	),
 	$component
 );?>
-<p><a href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a></p>
+	<a style="margin:28px 0 0 10px;" href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a>
+</div>
