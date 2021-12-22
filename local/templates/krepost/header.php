@@ -8,25 +8,18 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 <head>
 <?
 use Bitrix\Main\Page\Asset;
-// Пример подключения CSS
+$APPLICATION->ShowHead();
+// Подключение CSS
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/bootstrap.min.css');
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/mdb.min.css');
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/fontawesome.css');
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/solid.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.min.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/new.css');
-// Пример подключения JS
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/luxon/luxon.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/lodash/lodash.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/bootstrap/bootstrap.bundle.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/bootstrap/bootstrap.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/bootstrap/mdb.min.js');
-Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/libs/bootstrap/vue.global.prod.js');
-$APPLICATION->ShowHead();
+Asset::getInstance()->addString("<link href='//fonts.googleapis.com/css?family=Roboto:300,regular,500,700' rel='stylesheet' type='text/css'>");
+// Подключение JS
+Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/appscripts.js');
+Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">');
+Asset::getInstance()->addString('<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">');
 ?>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
 <title><? $APPLICATION->ShowTitle() ?></title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 

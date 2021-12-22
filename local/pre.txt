@@ -1,0 +1,9 @@
+All results:<br>
+
+<?echo "<pre>"; print_r($arResult);echo "</pre>";?>
+
+<?echo "<pre>"; print_r($arItem);echo "</pre>";?>
+
+Single kode:<br>
+
+<?=$arResult['SECTION']['PATH']['0']['DESCRIPTION'];?>
