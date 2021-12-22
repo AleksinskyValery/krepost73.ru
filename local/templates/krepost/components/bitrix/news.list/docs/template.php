@@ -23,23 +23,22 @@ $count = 1;
 	?>
 	<?if(!($arItem["DISPLAY_PROPERTIES"]["DOC_FILE"]["FILE_VALUE"]["SRC"])):?>
 	<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 documents__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<button class="documents__item-button">
+		<a href="<?=$arItem["FIELDS"]["DETAIL_PICTURE"]["SRC"]?>" class="glightbox documents__item-link">
             <img	src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>"
 					alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"
 					width="<?=$arItem["PREVIEW_PICTURE"]["WIDTH"]?>"
 					height="<?=$arItem["PREVIEW_PICTURE"]["HEIGHT"]?>"
 					class="documents__item-img">
-        </button>
+		</a>
         <p class="documents__item-title"><?echo $arItem["NAME"]?></p>
-<?echo $arItem["DISPLAY_PROPERTIES"]["DOC_FILE"]["FILE_VALUE"]["SRC"];?>			
-
 	</li>
 	<?endif;?>
+	<?// echo "<pre>"; print_r($arItem);echo "</pre>";?>
 <?endforeach;?>
 <?foreach($arResult["ITEMS"] as $arItem):?>
 	<?if($arItem["DISPLAY_PROPERTIES"]["DOC_FILE"]["FILE_VALUE"]["SRC"]):?>
 	<li class="col-xl-2 col-lg-3 col-md-4 col-sm-6 col-12 documents__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<a href="<?echo $arItem["DISPLAY_PROPERTIES"]["DOC_FILE"]["FILE_VALUE"]["SRC"];?>" target="_blank" class="documents__item-link">
+		<a href="<?echo $arItem["DISPLAY_PROPERTIES"]["DOC_FILE"]["FILE_VALUE"]["SRC"];?>" class="documents__item-link glightbox">
 			<img src="<?= SITE_TEMPLATE_PATH ?>/img/documents/document-pdf.png" alt="<?echo $arItem["NAME"]?>" class="documents__item-img">
 		</a>
 		<p class="documents__item-title"><?echo $arItem["NAME"]?></p>
@@ -57,4 +56,7 @@ $count = 1;
 <?endforeach;?>
 	</div>
 </section>
+<script>
+var lightbox = GLightbox();
+</script>
 <?// echo "<pre>"; print_r($arResult);echo "</pre>";?>

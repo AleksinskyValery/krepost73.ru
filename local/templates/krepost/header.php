@@ -19,7 +19,7 @@ Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/appscripts.js');
 Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">');
 Asset::getInstance()->addString('<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">');
 ?>
-<title><? $APPLICATION->ShowTitle() ?></title>
+<title>ГК "Крепость" || <? $APPLICATION->ShowTitle() ?></title>
 </head>
 <body>
 
