@@ -11,7 +11,7 @@ use Bitrix\Main\Page\Asset;
 $APPLICATION->ShowHead();
 // Подключение CSS
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/bootstrap.min.css');
-Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/style.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/main.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/new.css');
 Asset::getInstance()->addString("<link href='//fonts.googleapis.com/css?family=Roboto:300,regular,500,700' rel='stylesheet' type='text/css'>");
 // Подключение JS
