@@ -584,7 +584,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .header-menu__list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   -moz-column-gap: 47px;
   column-gap: 47px;
@@ -628,10 +627,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .header-menu__link:active {
   opacity: 0.5;
-}
-
-.search-without-catalogue {
-  display: none;
 }
 
 @media (max-width: 1199px) {
@@ -829,6 +824,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .slider__item {
   display: flex;
+  padding: 0 15px;
   width: 100%;
 }
 
@@ -1028,22 +1024,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .promo .main-slider .slider__item {
   width: 100%;
-/*  height: 327px; */
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.promo .main-slider .slider__item:nth-child(1) {
-  background-image: url("../../img/main/main-slider-equipment-for-security-systems.jpg");
-}
-
-.promo .main-slider .slider__item:nth-child(2) {
-  background-image: url("../../img/main/main-slider-for-dispatcher-complex-ob.jpg");
-}
-
-.promo .main-slider .slider__item:nth-child(3) {
-  background-image: url("../../img/main/main-slider-assembling-and-general-construction-work.jpg");
+  height: 327px;
 }
 
 .promo__list {
@@ -1057,8 +1038,7 @@ input[type="number"]::-webkit-inner-spin-button {
   display: grid;
   place-items: center;
   padding: 8px 14px;
-/*  width: 255px; */
-  width: 33%;
+  width: 255px;
   height: 65px;
   background-color: #E31E24;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -2404,7 +2384,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .footer-info__copyright-wrapper {
   display: flex;
-  justify-content: space-between;
 }
 
 .footer-info__copyright-link {
@@ -2583,18 +2562,6 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 1.1rem;
     line-height: 0.9rem;
   }
-}
-
-.catalogue {
-  display: none;
-}
-
-.search-with-catalogue {
-  display: none;
-}
-
-.search-without-catalogue {
-  display: block;
 }
 
 .search-without-catalogue .header-info__search-input {
