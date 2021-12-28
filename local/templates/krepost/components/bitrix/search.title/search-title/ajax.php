@@ -40,12 +40,12 @@ if (empty($arResult["CATEGORIES"]) || !$arResult['CATEGORIES_ITEMS_EXISTS'])
 						{
 							if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]):?>
 								<div class="search-title-result-item-price">
-									<span class="search-title-result-item-current-price text-primary"><?=$arPrice["PRINT_DISCOUNT_VALUE"]?></span>
+									<span class="search-title-result-item-current-price"><?=$arPrice["PRINT_DISCOUNT_VALUE"]?></span>
 									<span class="search-title-result-item-old-price text-muted"><?=$arPrice["PRINT_VALUE"]?></span>
 								</div>
 							<?else:?>
 								<div class="search-title-result-item-price">
-									<span class="search-title-result-item-current-price text-primary"><?=$arPrice["PRINT_VALUE"]?></span>
+									<span class="search-title-result-item-current-price"><?=$arPrice["PRINT_VALUE"]?></span>
 								</div>
 							<?endif;
 						}
@@ -53,13 +53,6 @@ if (empty($arResult["CATEGORIES"]) || !$arResult['CATEGORIES_ITEMS_EXISTS'])
 							break;
 					}
 					?>
-				</div>
-			</div>
-		<?else:?>
-			<div class="search-title-result-item pt-2 search-title-result-last-item">
-				<div class="search-title-result-item-image"></div>
-				<div class="bx_item_element">
-					<a class="search-title-result-item-link" href="<?echo $arItem["URL"]?>"><?echo $arItem["NAME"]?></a>
 				</div>
 			</div>
 		<?endif;?>

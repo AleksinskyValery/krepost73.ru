@@ -11,6 +11,7 @@ use Bitrix\Main\Page\Asset;
 $APPLICATION->ShowHead();
 // Подключение CSS
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/bootstrap.min.css');
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/mdb.min.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/main.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/new.css');
 Asset::getInstance()->addString("<link href='//fonts.googleapis.com/css?family=Roboto:300,regular,500,700' rel='stylesheet' type='text/css'>");
@@ -106,12 +107,16 @@ $APPLICATION->ShowPanel();
 </div>
 <div class="col-md-5 col-sm-10 col-12 offset-lg-1 offset-md-0 offset-sm-2 offset-0 search-with-catalogue">
 <?$APPLICATION->IncludeComponent(
-	"bitrix:search.title",
-	"search-title",
-	Array(
-		"CATEGORY_0" => array(0=>"iblock_1c_catalog",),
-		"CATEGORY_0_TITLE" => "",
-		"CATEGORY_0_iblock_1c_catalog" => array(0=>"all",),
+	"bitrix:search.title", 
+	"search-title", 
+	array(
+		"CATEGORY_0" => array(
+			0 => "iblock_1c_catalog",
+		),
+		"CATEGORY_0_TITLE" => "Каталог",
+		"CATEGORY_0_iblock_1c_catalog" => array(
+			0 => "16",
+		),
 		"CHECK_DATES" => "N",
 		"CONTAINER_ID" => "title-search",
 		"CONVERT_CURRENCY" => "N",
@@ -122,15 +127,19 @@ $APPLICATION->ShowPanel();
 		"PREVIEW_HEIGHT" => "75",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PREVIEW_WIDTH" => "75",
-		"PRICE_CODE" => array(0=>"BASE",),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"SHOW_INPUT" => "Y",
 		"SHOW_OTHERS" => "N",
 		"SHOW_PREVIEW" => "Y",
 		"TEMPLATE_THEME" => "",
 		"TOP_COUNT" => "5",
-		"USE_LANGUAGE_GUESS" => "Y"
-	)
+		"USE_LANGUAGE_GUESS" => "Y",
+		"COMPONENT_TEMPLATE" => "search-title"
+	),
+	false
 );?>
 </div>
 <?endif;?>
@@ -150,15 +159,32 @@ $APPLICATION->ShowPanel();
                 <div class="col-lg-1 col-2 header-info__user-wrapper">
                     <ul class="header-info__user-list">
                         <li class="header-info__user-item">
-                            <a href="/user" class="header-info__user-link">
+                            <a href="/personal/" class="header-info__user-link">
                                 <img src="<?= SITE_TEMPLATE_PATH ?>/img/main/icons/header-authorization.svg" alt="Авторизация" class="header-info__user-img">
                             </a>
                         </li>
                         <li class="header-info__user-item">
-                            <a href="/catalog/cart" class="header-info__user-link header-info__user-cart">
-                                <span class="header-info__user-cart-amount"></span>
-                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/main/icons/header-cart.svg" alt="Корзина" class="header-info__user-img">
-                            </a>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:sale.basket.basket.line",
+	"header_cart",
+	Array(
+		"HIDE_ON_BASKET_PAGES" => "N",
+		"PATH_TO_AUTHORIZE" => "",
+		"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+		"PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+		"PATH_TO_PERSONAL" => SITE_DIR."personal/",
+		"PATH_TO_PROFILE" => SITE_DIR."personal/",
+		"PATH_TO_REGISTER" => SITE_DIR."login/",
+		"POSITION_FIXED" => "N",
+		"SHOW_AUTHOR" => "N",
+		"SHOW_EMPTY_VALUES" => "Y",
+		"SHOW_NUM_PRODUCTS" => "Y",
+		"SHOW_PERSONAL_LINK" => "N",
+		"SHOW_PRODUCTS" => "N",
+		"SHOW_REGISTRATION" => "N",
+		"SHOW_TOTAL_PRICE" => "N"
+	)
+);?>
                         </li>
                     </ul>
                 </div>

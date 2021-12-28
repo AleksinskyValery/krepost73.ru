@@ -92,12 +92,12 @@ $APPLICATION->SetTitle("ГК \"Крепость\" || Главная");
 				<div class="slider__wrapper slider__wrapper_1920">
  <button class="slider__arrow slider__arrow-left"></button>
 					<ul class="slider" style="width: 600%; transform: translateX(0px); transition: all 0.75s ease 0s;">
-						<li class="slider__item" style="width: 775.172px;"> <a href="/category/Dispetcherskii-kompleks-Ob" class="categories__item"> <img alt="Диспетчерский комплекс “Объ”" src="/img/main/categories-dispatcher-complex-ob.png" class="categories__item-img">
+						<li class="slider__item" style="width: 775.172px;"> <a href="/category/Dispetcherskii-kompleks-Ob" class="categories__item"> <img alt="Диспетчерский комплекс “Объ”" src="<?= SITE_TEMPLATE_PATH ?>/img/main/categories-dispatcher-complex-ob.png" class="categories__item-img">
 						<h3 class="categories__item-title">Диспетчерский комплекс “Объ”</h3>
 						<p class="categories__item-amount">
 							 20 товаров
 						</p>
- </a> <a href="/category/Dopolnitelnye-ustroistva" class="categories__item"> <img alt="Дополнительные устройства" src="/img/main/categories-additional-devices.png" class="categories__item-img">
+ </a> <a href="/category/Dopolnitelnye-ustroistva" class="categories__item"> <img alt="Дополнительные устройства" src="<?= SITE_TEMPLATE_PATH ?>/img/main/categories-additional-devices.png" class="categories__item-img">
 						<h3 class="categories__item-title">Дополнительные устройства</h3>
 						<p class="categories__item-amount">
 							 35 товаров

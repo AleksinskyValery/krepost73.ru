@@ -32,14 +32,16 @@ function toggleHeaderCatalogue({
 }
 function toggleTabs({
     tabParentSelector,
-    tabHeaderSelector,
+   tabHeaderSelector,
    tabHeaderActiveClass,
    tabItemSelector,
    tabItemActiveClass,
+   linkSelector,
    event}) {
    const tabParent = document.querySelector(tabParentSelector);
    const tabHeaders = document.querySelectorAll(tabHeaderSelector);
    const tabItems = document.querySelectorAll(tabItemSelector);
+   const links = document.querySelectorAll(linkSelector);
 
    tabParent.addEventListener(event, e => {
        if (e.target && e.target.closest(tabHeaderSelector)) {
@@ -60,4 +62,14 @@ function toggleTabs({
            });
        }
    });
+
+   if (links) {
+       links.forEach(link => {
+           link.addEventListener('mouseover', () => {
+               if (!link.hasAttribute('data-tabheader')) {
+                   tabItems.forEach(tabItem => tabItem.classList.remove(tabItemActiveClass));
+               }
+           });
+       });
+   }
 }

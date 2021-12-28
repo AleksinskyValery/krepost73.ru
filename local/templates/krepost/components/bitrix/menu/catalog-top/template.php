@@ -22,7 +22,7 @@ if($arItem["DEPTH_LEVEL"] == 1)
 	<?if ($arItem["IS_PARENT"]):?>
 
 		<?if ($arItem["DEPTH_LEVEL"] == 1):?>
-			<li class="header-info__catalogue-item"><a href="<?=$arItem["LINK"]?>" class="header-info__catalogue-link<?if ($arItem["SELECTED"]):?> selected<?endif?>"><?=$arItem["TEXT"]?></a>
+			<li class="header-info__catalogue-item"><a data-tabheader href="<?=$arItem["LINK"]?>" class="header-info__catalogue-link<?if ($arItem["SELECTED"]):?> selected<?endif?>"><?=$arItem["TEXT"]?></a>
 				<ul class="header-info__catalogue-sublist">
 		<?else:?>
 			<li><a href="<?=$arItem["LINK"]?>" class="parent<?if ($arItem["SELECTED"]):?> item-selected<?endif?>"><?=$arItem["TEXT"]?></a>
@@ -69,10 +69,11 @@ toggleHeaderCatalogue({
 	catalogueOpenActiveClass: 'header-info__catalogue-open_active',
 });
 toggleTabs({
-	tabParentSelector: '.header-info__catalogue-list',
-    tabHeaderSelector: '.header-info__catalogue-link',
-    tabItemSelector: '.header-info__catalogue-sublist',
-    tabItemActiveClass: 'header-info__catalogue-sublist_active',
-    event: 'mouseover'
+        tabParentSelector: '.header-info__catalogue-list',
+       tabHeaderSelector: '[data-tabheader]',
+       tabItemSelector: '.header-info__catalogue-sublist',
+       tabItemActiveClass: 'header-info__catalogue-sublist_active',
+       linkSelector: '.header-info__catalogue-link',
+       event: 'mouseover'
 });
 </script>
