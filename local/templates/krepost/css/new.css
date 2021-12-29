@@ -717,4 +717,57 @@
         margin-top: 15px;
     }
 }
+/*Оплата*/
+.pay_blocks {
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
+.pay_blocks .img_block {
+    margin-right: 20px;
+}
+.pay_blocks .img_block2 {
+    margin-right: 53px;
+}
+/*Возврат*/
+.return_block {
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+}
+@media (max-width: 767px) {
+    .pay_blocks .img_block img {
+        width: 100px;
+    }
+    .pay_blocks .img_block2 {
+        margin-right: 35px;
+    }
+    .pay_blocks .img_block2 img {
+        width: 100px;
+    }
+    /*Доставка*/
+    .shipping_page .no-gutters .col-md-4 {
+        text-align:center;
+        margin-top: 20px;
+    }    
+}
+@media (max-width: 576px) {
+    .pay_blocks {
+        flex-direction: column;
+    }
+    .pay_blocks .img_block,
+    .pay_blocks .img_block2 {
+        margin-right: 0px;
+        width: 100%;
+    }
+    .pay_blocks .img_block img,
+    .pay_blocks .img_block2 img {
+        width: auto;
+        max-width: 100%;
+    }
+    .return_block {
+        flex-direction: column;
+        width: 100%;
+    }
+}
 /* Сртраница о компании photogallery */

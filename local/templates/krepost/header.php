@@ -160,7 +160,7 @@ $APPLICATION->ShowPanel();
                     <ul class="header-info__user-list">
                         <li class="header-info__user-item">
                             <a href="/personal/" class="header-info__user-link">
-                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/main/icons/header-authorization.svg" alt="Авторизация" class="header-info__user-img">
+                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/main/icons/header-authorization.svg" title="Личный кабинет" alt="Личный кабинет" class="header-info__user-img">
                             </a>
                         </li>
                         <li class="header-info__user-item">
@@ -233,5 +233,6 @@ $APPLICATION->ShowPanel();
 	<div class="container">
 		<h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
 	</div>
+	<div class="container">
 	<?endif?>
 <?}?>

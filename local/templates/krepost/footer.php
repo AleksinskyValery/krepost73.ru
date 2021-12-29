@@ -91,7 +91,7 @@
 	)
 );?>
     <?}?>
-
+	</div>
 </main>
 <footer class="footer">
 <nav class="footer-menu">
