@@ -1,10 +1,9 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
-<? if (defined('ERROR_404') || ERROR_404 == 'Y'){
-    require_once("footer_404.php");
-} else { ?>
-
-    <?
+<? if (defined('ERROR_404') || ERROR_404 == 'Y'){?>
+</section>
+    <?require_once("footer_404.php");
+} else {
     if (CSite::InDir('/news/')){ ?>
      <?} else { ?>
         <?$APPLICATION->IncludeComponent(

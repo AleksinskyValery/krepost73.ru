@@ -2,7 +2,23 @@
 
 <footer class="footer">
     <div class="container">
-        <p>Тут выведена вся карта сайта в 4 колонки.</p>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:menu",
+	"sitemap",
+	Array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "subcatalog-sitemap",
+		"COMPONENT_TEMPLATE" => ".default",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "4",
+		"MENU_CACHE_GET_VARS" => "",
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "sitemap",
+		"USE_EXT" => "Y"
+	)
+);?>
     </div>
     <div class="footer-info">
         <div class="container container_p0">

@@ -221,9 +221,17 @@ $APPLICATION->ShowPanel();
         )
     );?>
 <?endif?>
-<?if(!$IsMainPage):?>
-<div class="container">
-    <h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
-</div>
-<?endif?>
+
+<? if (defined('ERROR_404') || ERROR_404 == 'Y'){?>
+	<section class="not-found">
+	<div class="container">
+		<h1 class="titleH1"><? $APPLICATION->ShowTitle(false) ?></h1>
+	</div>
+<?} else { ?>
 <main class="main">
+	<?if(!$IsMainPage):?>
+	<div class="container">
+		<h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
+	</div>
+	<?endif?>
+<?}?>
