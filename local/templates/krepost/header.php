@@ -230,7 +230,7 @@ $APPLICATION->ShowPanel();
 <?} else { ?>
 <main class="main">
 	<?if(!$IsMainPage):?>
-	<div class="container">
+	<div class="container title_wrap">
 		<h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
 	</div>
 	<div class="container">

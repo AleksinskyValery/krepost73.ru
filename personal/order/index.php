@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Title");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:sale.order.ajax", 
-	"order_mag", 
+	"order-big", 
 	array(
 		"ADDITIONAL_PICT_PROP_5" => "-",
 		"ADDITIONAL_PICT_PROP_6" => "-",
@@ -76,13 +76,13 @@ $APPLICATION->SetTitle("Title");
 		"USE_PRELOAD" => "N",
 		"USE_PREPAYMENT" => "N",
 		"USE_YM_GOALS" => "N",
-		"COMPONENT_TEMPLATE" => "order_mag",
+		"COMPONENT_TEMPLATE" => "order-big",
 		"ALLOW_APPEND_ORDER" => "Y",
 		"SHOW_NOT_CALCULATED_DELIVERIES" => "L",
 		"SPOT_LOCATION_BY_GEOIP" => "Y",
 		"SHOW_VAT_PRICE" => "Y",
 		"USER_CONSENT" => "Y",
-		"USER_CONSENT_ID" => "2",
+		"USER_CONSENT_ID" => "0",
 		"USER_CONSENT_IS_CHECKED" => "N",
 		"USER_CONSENT_IS_LOADED" => "N",
 		"ACTION_VARIABLE" => "soa-action",
@@ -95,7 +95,9 @@ $APPLICATION->SetTitle("Title");
 		"PICKUP_MAP_TYPE" => "yandex",
 		"SHOW_COUPONS" => "Y",
 		"HIDE_ORDER_DESCRIPTION" => "N",
-		"USE_ENHANCED_ECOMMERCE" => "N"
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"ADDITIONAL_PICT_PROP_16" => "-",
+		"ADDITIONAL_PICT_PROP_17" => "-"
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -26,30 +26,10 @@ else
 	$basketAction = (isset($arParams['DETAIL_ADD_TO_BASKET_ACTION']) ? $arParams['DETAIL_ADD_TO_BASKET_ACTION'] : array());
 }
 
-$isSidebar = ($arParams['SIDEBAR_DETAIL_SHOW'] == 'Y' && !empty($arParams['SIDEBAR_PATH']));
-$isSidebarLeft = isset($arParams['SIDEBAR_SECTION_POSITION']) && $arParams['SIDEBAR_SECTION_POSITION'] === 'left';
 ?>
-<div class="row bx-<?=$arParams['TEMPLATE_THEME']?>">
-	<div class='<?=($isSidebar ? 'col-md-9 col-sm-8' : 'col')?>'>
+<div class="row">
+	<div class="col">
 		<?
-		if ($arParams["USE_COMPARE"] === "Y")
-		{
-			$APPLICATION->IncludeComponent("bitrix:catalog.compare.list", "bootstrap_v4", array(
-					"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-					"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-					"NAME" => $arParams["COMPARE_NAME"],
-					"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
-					"COMPARE_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["compare"],
-					"ACTION_VARIABLE" => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action"),
-					"PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
-					'POSITION_FIXED' => isset($arParams['COMPARE_POSITION_FIXED']) ? $arParams['COMPARE_POSITION_FIXED'] : '',
-					'POSITION' => isset($arParams['COMPARE_POSITION']) ? $arParams['COMPARE_POSITION'] : ''
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-		}
-
 		$componentElementParams = array(
 			'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
 			'IBLOCK_ID' => $arParams['IBLOCK_ID'],
@@ -218,7 +198,7 @@ $isSidebarLeft = isset($arParams['SIDEBAR_SECTION_POSITION']) && $arParams['SIDE
 			$componentElementParams['USER_CONSENT_IS_LOADED'] = $arParams['USER_CONSENT_IS_LOADED'];
 		}
 
-		$elementId = $APPLICATION->IncludeComponent('bitrix:catalog.element', 'bootstrap_v4', $componentElementParams,
+		$elementId = $APPLICATION->IncludeComponent('bitrix:catalog.element', 'element', $componentElementParams,
 			$component
 		);
 
@@ -430,7 +410,7 @@ $isSidebarLeft = isset($arParams['SIDEBAR_SECTION_POSITION']) && $arParams['SIDE
 							<div class="catalog-block-header" data-entity="header" data-showed="false" style="display: none; opacity: 0;">
 								<?=GetMessage('CATALOG_POPULAR_IN_SECTION')?>
 							</div>
-							<? $APPLICATION->IncludeComponent('bitrix:catalog.section', 'bootstrap_v4', array(
+							<? $APPLICATION->IncludeComponent('bitrix:catalog.section', 'section', array(
 									'IBLOCK_TYPE' => $arParams['IBLOCK_TYPE'],
 									'IBLOCK_ID' => $arParams['IBLOCK_ID'],
 									'SECTION_ID' => $arResult['VARIABLES']['SECTION_ID'],
@@ -660,22 +640,4 @@ $isSidebarLeft = isset($arParams['SIDEBAR_SECTION_POSITION']) && $arParams['SIDE
 		}
 		?>
 	</div>
-	<? if ($isSidebar): ?>
-		<div class='col-md-3 col-sm-4'>
-			<?
-			$APPLICATION->IncludeComponent(
-				'bitrix:main.include',
-				'',
-				array(
-					'AREA_FILE_SHOW' => 'file',
-					'PATH' => $arParams['SIDEBAR_PATH'],
-					'AREA_FILE_RECURSIVE' => 'N',
-					'EDIT_MODE' => 'html',
-				),
-				false,
-				array('HIDE_ICONS' => 'Y')
-			);
-			?>
-		</div>
-	<? endif ?>
 </div>
