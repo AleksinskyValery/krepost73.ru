@@ -159,32 +159,39 @@ $APPLICATION->ShowPanel();
                 <div class="col-lg-1 col-2 header-info__user-wrapper">
                     <ul class="header-info__user-list">
                         <li class="header-info__user-item">
-                            <a href="/personal/" class="header-info__user-link">
-                                <img src="<?= SITE_TEMPLATE_PATH ?>/img/main/icons/header-authorization.svg" title="Личный кабинет" alt="Личный кабинет" class="header-info__user-img">
-                            </a>
+						<?$APPLICATION->IncludeComponent(
+							"bitrix:system.auth.form",
+							"emarket_auth",
+							Array(
+								"FORGOT_PASSWORD_URL" => "",
+								"PROFILE_URL" => SITE_DIR."personal/",
+								"REGISTER_URL" => SITE_DIR."auth/",
+								"SHOW_ERRORS" => "N"
+							)
+						);?>
                         </li>
                         <li class="header-info__user-item">
-<?$APPLICATION->IncludeComponent(
-	"bitrix:sale.basket.basket.line",
-	"header_cart",
-	Array(
-		"HIDE_ON_BASKET_PAGES" => "N",
-		"PATH_TO_AUTHORIZE" => "",
-		"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
-		"PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
-		"PATH_TO_PERSONAL" => SITE_DIR."personal/",
-		"PATH_TO_PROFILE" => SITE_DIR."personal/",
-		"PATH_TO_REGISTER" => SITE_DIR."login/",
-		"POSITION_FIXED" => "N",
-		"SHOW_AUTHOR" => "N",
-		"SHOW_EMPTY_VALUES" => "Y",
-		"SHOW_NUM_PRODUCTS" => "Y",
-		"SHOW_PERSONAL_LINK" => "N",
-		"SHOW_PRODUCTS" => "N",
-		"SHOW_REGISTRATION" => "N",
-		"SHOW_TOTAL_PRICE" => "N"
-	)
-);?>
+							<?$APPLICATION->IncludeComponent(
+								"bitrix:sale.basket.basket.line",
+								"header_cart",
+								Array(
+									"HIDE_ON_BASKET_PAGES" => "N",
+									"PATH_TO_AUTHORIZE" => "",
+									"PATH_TO_BASKET" => SITE_DIR."personal/cart/",
+									"PATH_TO_ORDER" => SITE_DIR."personal/order/make/",
+									"PATH_TO_PERSONAL" => SITE_DIR."personal/",
+									"PATH_TO_PROFILE" => SITE_DIR."personal/",
+									"PATH_TO_REGISTER" => SITE_DIR."login/",
+									"POSITION_FIXED" => "N",
+									"SHOW_AUTHOR" => "N",
+									"SHOW_EMPTY_VALUES" => "Y",
+									"SHOW_NUM_PRODUCTS" => "Y",
+									"SHOW_PERSONAL_LINK" => "N",
+									"SHOW_PRODUCTS" => "N",
+									"SHOW_REGISTRATION" => "N",
+									"SHOW_TOTAL_PRICE" => "N"
+								)
+							);?>
                         </li>
                     </ul>
                 </div>

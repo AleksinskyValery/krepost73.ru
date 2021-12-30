@@ -24,8 +24,6 @@ else
 	$basketAction = isset($arParams['SECTION_ADD_TO_BASKET_ACTION']) ? $arParams['SECTION_ADD_TO_BASKET_ACTION'] : '';
 }
 ?>
-<div class="row mb-4 <?=$arParams["TEMPLATE_THEME"]?>">
-	<div class="<?=$contentBlockClass?>">
 		<div class="row">
 			<div class="col">
 				<?
@@ -191,5 +189,10 @@ else
 			</div>
 		</div>
 <?unset($basketAction);?>
-	</div>
-</div>
+<?$APPLICATION->IncludeFile(
+SITE_DIR."include/catalog_main_text.php",
+	array(),
+	array(
+		"MODE" => "text"
+	)
+);?>

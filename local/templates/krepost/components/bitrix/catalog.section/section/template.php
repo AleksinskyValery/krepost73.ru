@@ -179,16 +179,15 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 	if (($arParams['HIDE_SECTION_DESCRIPTION'] !== 'Y') && !empty($arResult['DESCRIPTION']))
 	{
 		?>
-		<div class="row mb-4">
-			<div class="col catalog-section-description">
-				<p><?=$arResult['DESCRIPTION']?></p>
-			</div>
-		</div>
+		<section class="things-to-know">
+				<h2 class="titleH2 titleH2_mt">Что нужно знать</h2>
+				<div class="things-to-know__wrapper"><?=$arResult['DESCRIPTION']?></div>
+		</section>
 		<?
 	}
 	//endregion
 	?>
-		<div class="mb-4 catalog-section" data-entity="<?=$containerName?>">
+		<div class="row product-preview__list" data-entity="<?=$containerName?>">
 			<!-- items-container -->
 			<?
 			if (!empty($arResult['ITEMS']) && !empty($arResult['ITEM_ROWS']))
@@ -306,11 +305,11 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 								foreach ($rowItems as $item)
 								{
 									?>
-									<div class="col-6 col-md-3 product-item-small-card">
+									<div class="col-3">
 										<?
 										$APPLICATION->IncludeComponent(
 											'bitrix:catalog.item',
-											'bootstrap_v4',
+											'item',
 											array(
 												'RESULT' => array(
 													'ITEM' => $item,
@@ -681,8 +680,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 			?>
 			<div class="text-center mb-4" data-entity="lazy-<?=$containerName?>">
 				<button type="button"
-						class="btn btn-primary btn-md"
-						style="margin: 15px;"
+						class="btn-lazy"
 						data-use="show-more-<?=$navParams['NavNum']?>">
 							<?=$arParams['MESS_BTN_LAZY_LOAD']?>
 				</button>
@@ -748,5 +746,8 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 				container: '<?=$containerName?>'
 			});
 		</script>
+
+
 	</div>
-</div>
+</div> <? //end wrapper?>
+<!-- component-end -->

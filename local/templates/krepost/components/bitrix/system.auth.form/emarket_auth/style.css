@@ -1,0 +1,16 @@
+.header-info__user-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
+    height: 37px;
+}
+.header-info__user-item {
+    display: flex;
+}
+.header-info__user-img-logout{
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
