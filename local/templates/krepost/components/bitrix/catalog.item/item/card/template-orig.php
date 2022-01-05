@@ -23,20 +23,38 @@ use \Bitrix\Main\Localization\Loc;
  */
 ?>
 
-<div class="product-preview__item">
-	<a class="product-preview__item-link" href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>" data-entity="image-wrapper">
-		<img src="<?=$item['PREVIEW_PICTURE']['SRC']?>" alt="<?=$item['NAME']?>" class="product-preview__item-img">
+<div class="product-item">
+	<? if ($itemHasDetailUrl): ?>
+	<a class="product-item-image-wrapper" href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$imgTitle?>"
+		data-entity="image-wrapper">
+		<? else: ?>
+		<span class="product-item-image-wrapper" data-entity="image-wrapper">
+	<? endif; ?>
 		<span class="product-item-image-slider-slide-container slide" id="<?=$itemIds['PICT_SLIDER']?>"
 			<?=($showSlider ? '' : 'style="display: none;"')?>
 			data-slider-interval="<?=$arParams['SLIDER_INTERVAL']?>" data-slider-wrap="true">
+			<?
+			if ($showSlider)
+			{
+				foreach ($morePhoto as $key => $photo)
+				{
+					?>
+					<span class="product-item-image-slide item <?=($key == 0 ? 'active' : '')?>" style="background-image: url('<?=$photo['SRC']?>');"></span>
+					<?
+				}
+			}
+			?>
 		</span>
+		<span class="product-item-image-original" id="<?=$itemIds['PICT']?>" style="background-image: url('<?=$item['PREVIEW_PICTURE']['SRC']?>'); <?=($showSlider ? 'display: none;' : '')?>"></span>
 		<?
 		if ($item['SECOND_PICT'])
 		{
+			$bgImage = !empty($item['PREVIEW_PICTURE_SECOND']) ? $item['PREVIEW_PICTURE_SECOND']['SRC'] : $item['PREVIEW_PICTURE']['SRC'];
 			?>
-			<span class="product-item-image-alternative" id="<?=$itemIds['SECOND_PICT']?>"></span>
+			<span class="product-item-image-alternative" id="<?=$itemIds['SECOND_PICT']?>" style="background-image: url('<?=$bgImage?>'); <?=($showSlider ? 'display: none;' : '')?>"></span>
 			<?
 		}
+
 		if ($arParams['SHOW_DISCOUNT_PERCENT'] === 'Y')
 		{
 			?>
@@ -46,19 +64,67 @@ use \Bitrix\Main\Localization\Loc;
 			</div>
 			<?
 		}
+
+		if ($item['LABEL'])
+		{
+			?>
+			<div class="product-item-label-text <?=$labelPositionClass?>" id="<?=$itemIds['STICKER_ID']?>">
+				<?
+				if (!empty($item['LABEL_ARRAY_VALUE']))
+				{
+					foreach ($item['LABEL_ARRAY_VALUE'] as $code => $value)
+					{
+						?>
+						<div<?=(!isset($item['LABEL_PROP_MOBILE'][$code]) ? ' class="d-none d-sm-block"' : '')?>>
+							<span title="<?=$value?>"><?=$value?></span>
+						</div>
+						<?
+					}
+				}
+				?>
+			</div>
+			<?
+		}
+		?>
+		<span class="product-item-image-slider-control-container" id="<?=$itemIds['PICT_SLIDER']?>_indicator"
+			<?=($showSlider ? '' : 'style="display: none;"')?>>
+			<?
+			if ($showSlider)
+			{
+				foreach ($morePhoto as $key => $photo)
+				{
+					?>
+					<span class="product-item-image-slider-control<?=($key == 0 ? ' active' : '')?>" data-go-to="<?=$key?>"></span>
+					<?
+				}
+			}
+			?>
+		</span>
+		<?
+		if ($arParams['SLIDER_PROGRESS'] === 'Y')
+		{
+			?>
+			<span class="product-item-image-slider-progress-bar-container">
+				<span class="product-item-image-slider-progress-bar" id="<?=$itemIds['PICT_SLIDER']?>_progress_bar" style="width: 0;"></span>
+			</span>
+			<?
+		}
 		?>
 			<? if ($itemHasDetailUrl): ?>
 	</a>
 <? else: ?>
 	</span>
 <? endif; ?>
-<h4 class="product-preview__item-title titleH4">
-		<a class="product-preview__item-title-link" href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a>
-</h4>
-<? if ($itemHitProdazh): ?>
-		<p class="product-preview__item-hit">Хит продаж</p>
-<? endif; ?>
-<?
+	<h3 class="product-item-title">
+		<? if ($itemHasDetailUrl): ?>
+		<a href="<?=$item['DETAIL_PAGE_URL']?>" title="<?=$productTitle?>">
+			<? endif; ?>
+			<?=$productTitle?>
+			<? if ($itemHasDetailUrl): ?>
+		</a>
+	<? endif; ?>
+	</h3>
+	<?
 	if (!empty($arParams['PRODUCT_BLOCKS_ORDER']))
 	{
 		foreach ($arParams['PRODUCT_BLOCKS_ORDER'] as $blockName)
@@ -66,8 +132,19 @@ use \Bitrix\Main\Localization\Loc;
 			switch ($blockName)
 			{
 				case 'price': ?>
-					<span data-entity="price-block">
-						<p class="product-preview__item-price" id="<?=$itemIds['PRICE']?>">
+					<div class="product-item-info-container product-item-price-container" data-entity="price-block">
+						<?
+						if ($arParams['SHOW_OLD_PRICE'] === 'Y')
+						{
+							?>
+							<span class="product-item-price-old" id="<?=$itemIds['PRICE_OLD']?>"
+								<?=($price['RATIO_PRICE'] >= $price['RATIO_BASE_PRICE'] ? 'style="display: none;"' : '')?>>
+								<?=$price['PRINT_RATIO_BASE_PRICE']?>
+							</span>&nbsp;
+							<?
+						}
+						?>
+						<span class="product-item-price-current" id="<?=$itemIds['PRICE']?>">
 							<?
 							if (!empty($price))
 							{
@@ -88,8 +165,7 @@ use \Bitrix\Main\Localization\Loc;
 								}
 							}
 							?>
-						</p>
-					</span>
+						</span>
 					</div>
 					<?
 					break;
@@ -102,7 +178,7 @@ use \Bitrix\Main\Localization\Loc;
 							if ($arParams['PRODUCT_DISPLAY_MODE'] === 'Y')
 							{
 								?>
-								<div class="product-item-info-container"
+								<div class="product-item-info-container product-item-hidden"
 									id="<?=$itemIds['QUANTITY_LIMIT']?>"
 									style="display: none;"
 									data-entity="quantity-limit-block">
@@ -124,7 +200,7 @@ use \Bitrix\Main\Localization\Loc;
 							)
 							{
 								?>
-								<div class="product-item-info-container" id="<?=$itemIds['QUANTITY_LIMIT']?>">
+								<div class="product-item-info-container product-item-hidden" id="<?=$itemIds['QUANTITY_LIMIT']?>">
 									<div class="product-item-info-container-title text-muted">
 										<?=$arParams['MESS_SHOW_MAX_QUANTITY']?>:
 										<span class="product-item-quantity text-dark" data-entity="quantity-limit-value">
@@ -161,7 +237,7 @@ use \Bitrix\Main\Localization\Loc;
 						if ($actualItem['CAN_BUY'] && $arParams['USE_PRODUCT_QUANTITY'])
 						{
 							?>
-							<div class="product-item-info-container" data-entity="quantity-block">
+							<div class="product-item-info-container product-item-hidden" data-entity="quantity-block">
 								<div class="product-item-amount">
 									<div class="product-item-amount-field-container">
 										<span class="product-item-amount-field-btn-minus no-select" id="<?=$itemIds['QUANTITY_DOWN']?>"></span>
@@ -184,7 +260,7 @@ use \Bitrix\Main\Localization\Loc;
 						if ($arParams['USE_PRODUCT_QUANTITY'])
 						{
 							?>
-							<div class="product-item-info-container" data-entity="quantity-block">
+							<div class="product-item-info-container product-item-hidden" data-entity="quantity-block">
 								<div class="product-item-amount">
 									<div class="product-item-amount-field-container">
 										<span class="product-item-amount-field-btn-minus no-select" id="<?=$itemIds['QUANTITY_DOWN']?>"></span>
@@ -206,13 +282,8 @@ use \Bitrix\Main\Localization\Loc;
 					break;
 
 				case 'buttons':
-					if (!$actualItem['CAN_BUY']):?>
-						<div class="not-available">
-							<?=$arParams['MESS_NOT_AVAILABLE'];?>
-						</div>
-					<?endif;
 					?>
-					<div class="product-preview__item-price-wrapper" data-entity="buttons-block">
+					<div class="product-item-info-container product-item-hidden" data-entity="buttons-block">
 						<?
 						if (!$haveOffers)
 						{
@@ -220,8 +291,9 @@ use \Bitrix\Main\Localization\Loc;
 							{
 								?>
 								<div class="product-item-button-container" id="<?=$itemIds['BASKET_ACTIONS']?>">
-									<button class="product-preview__item-cart" id="<?=$itemIds['BUY_LINK']?>"
+									<button class="btn btn-primary <?=$buttonSizeClass?>" id="<?=$itemIds['BUY_LINK']?>"
 											href="javascript:void(0)" rel="nofollow">
+										<?=($arParams['ADD_TO_BASKET_ACTION'] === 'BUY' ? $arParams['MESS_BTN_BUY'] : $arParams['MESS_BTN_ADD_TO_BASKET'])?>
 									</button>
 								</div>
 								<?
@@ -230,8 +302,27 @@ use \Bitrix\Main\Localization\Loc;
 							{
 								?>
 								<div class="product-item-button-container">
-									<button class="product-preview__item-cart not-available-cart" id="<?=$itemIds['NOT_AVAILABLE_MESS']?>"
-											href="javascript:void(0)" rel="nofollow">
+									<?
+									if ($showSubscribe)
+									{
+										$APPLICATION->IncludeComponent(
+											'bitrix:catalog.product.subscribe',
+											'',
+											array(
+												'PRODUCT_ID' => $actualItem['ID'],
+												'BUTTON_ID' => $itemIds['SUBSCRIBE_LINK'],
+												'BUTTON_CLASS' => 'btn btn-primary '.$buttonSizeClass,
+												'DEFAULT_DISPLAY' => true,
+												'MESS_BTN_SUBSCRIBE' => $arParams['~MESS_BTN_SUBSCRIBE'],
+											),
+											$component,
+											array('HIDE_ICONS' => 'Y')
+										);
+									}
+									?>
+									<button class="btn btn-link <?=$buttonSizeClass?>"
+											id="<?=$itemIds['NOT_AVAILABLE_MESS']?>" href="javascript:void(0)" rel="nofollow">
+										<?=$arParams['MESS_NOT_AVAILABLE']?>
 									</button>
 								</div>
 								<?
@@ -243,7 +334,6 @@ use \Bitrix\Main\Localization\Loc;
 							{
 								?>
 								<div class="product-item-button-container">
-									1111111
 									<?
 									if ($showSubscribe)
 									{
@@ -288,6 +378,7 @@ use \Bitrix\Main\Localization\Loc;
 							}
 						}
 						?>
+					</div>
 					<?
 					break;
 
@@ -297,7 +388,7 @@ use \Bitrix\Main\Localization\Loc;
 						if (!empty($item['DISPLAY_PROPERTIES']))
 						{
 							?>
-							<div class="product-item-info-container" data-entity="props-block">
+							<div class="product-item-info-container product-item-hidden" data-entity="props-block">
 								<dl class="product-item-properties">
 									<?
 									foreach ($item['DISPLAY_PROPERTIES'] as $code => $displayProperty)
@@ -406,7 +497,7 @@ use \Bitrix\Main\Localization\Loc;
 						if ($showProductProps || $showOfferProps)
 						{
 							?>
-							<div class="product-item-info-container" data-entity="props-block">
+							<div class="product-item-info-container product-item-hidden" data-entity="props-block">
 								<dl class="product-item-properties">
 									<?
 									if ($showProductProps)
@@ -445,7 +536,7 @@ use \Bitrix\Main\Localization\Loc;
 					if ($arParams['PRODUCT_DISPLAY_MODE'] === 'Y' && $haveOffers && !empty($item['OFFERS_PROP']))
 					{
 						?>
-						<div class="product-item-info-container" id="<?=$itemIds['PROP_DIV']?>">
+						<div class="product-item-info-container product-item-hidden" id="<?=$itemIds['PROP_DIV']?>">
 							<?
 							foreach ($arParams['SKU_PROPS'] as $skuProperty)
 							{
