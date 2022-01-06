@@ -822,8 +822,6 @@ input::-webkit-inner-spin-button { -webkit-appearance: none; }
 .product-item-detail-properties-name {
 	padding-right: 3px;
 	color: #a5a5a5;
-	flex: auto;
-    max-width: 100%;
 }
 .product-item-detail-properties-name p::after {
 	content: '';

@@ -53,7 +53,7 @@ else
 				}
 				$APPLICATION->IncludeComponent(
 					"bitrix:catalog.section.list",
-					"bootstrap_v4",
+					"section-list",
 					$sectionListParams,
 					$component,
 					array("HIDE_ICONS" => "Y")

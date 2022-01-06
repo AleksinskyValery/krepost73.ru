@@ -806,19 +806,17 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 									foreach ($arResult['DISPLAY_PROPERTIES'] as $property)
 									{
 										?>
-										<?if (!is_array($property['DISPLAY_VALUE'])):?>
 										<li class="product-item-detail-properties-item">
 											<span class="product-item-detail-properties-name"><?=$property['NAME']?></span>
 											<span class="product-item-detail-properties-dots"></span>
-											<span class="product-item-detail-properties-value"><?=$property['DISPLAY_VALUE']?></span>
+											<span class="product-item-detail-properties-value"><?=(
+												is_array($property['DISPLAY_VALUE'])
+													? implode(' / ', $property['DISPLAY_VALUE'])
+													: $property['DISPLAY_VALUE']
+												)?>
+										</span>
 										</li>
-										<?endif;
-										if (is_array($property['DISPLAY_VALUE'])) {?>
-											<li class="product-item-detail-properties-item"><?
-												echo '<span class="product-item-detail-properties-name"><p>' . implode('</p><p>', $property['DISPLAY_VALUE']) . '</p></span>';
-												echo '<span class="product-item-detail-properties-value">' .  implode("<br/>", $property['DESCRIPTION']) . '</span>';
-											?></li><?
-											}
+										<?
 									}
 									unset($property);
 									?>
