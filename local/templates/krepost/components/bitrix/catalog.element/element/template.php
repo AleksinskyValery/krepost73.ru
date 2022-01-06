@@ -354,7 +354,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 										}
 										else
 										{
-											?><p>Цена:</div><?
+											?><div>Цена:</div><?
 										}
 										?><div class="product__info-price-wrap"><?
 										if ($arParams['SHOW_OLD_PRICE'] === 'Y')
