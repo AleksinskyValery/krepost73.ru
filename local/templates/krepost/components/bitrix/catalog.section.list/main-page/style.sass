@@ -1,0 +1,96 @@
+.product-category
+    .titleH1
+        &::after
+            width: 23%
+    &__list
+        display: flex
+        flex-wrap: wrap
+        // column-gap: 45px
+        column-gap: 27px
+        row-gap: 40px
+        margin-top: 50px
+        padding-bottom: 15px
+        width: 100%
+    &__item
+        position: relative
+        padding: 13px 15px
+        max-width: 350px
+        width: 100%
+        box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.13)
+        border-radius: 10px
+        cursor: pointer
+        &:hover
+            box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.2)
+        &:active
+            opacity: 0.5
+        &-img
+            position: absolute
+            top: -20px
+            right: 20px
+            max-width: 320px
+            max-height: 140px
+        &-title
+            margin-top: 125px
+            font-weight: bold
+            color: #020534
+        &-amount
+            margin-top: 5px
+            color: #666666
+
+@media (max-width: 1199px)
+    .product-category
+        &__list
+            gap: 30px
+        &__item
+            max-width: 300px
+            &-img
+                max-height: 120px
+            &-title
+                margin-top: 95px
+                height: 40px
+
+@media (max-width: 991px)
+    .product-category
+        .titleH1
+            &::after
+                width: 43%
+        &__item
+            max-width: 220px
+            &-img
+                max-height: 100px
+                max-width: 150px
+            &-title
+                margin-top: 75px
+                height: 30px
+                font-size: 1.3rem
+                line-height: 1.6rem
+            &-amount
+                font-size: 1.4rem
+                line-height: 1.4rem
+
+@media (max-width: 767px) 
+    .product-category
+        &__list
+            column-gap: 40px
+        &__item
+            max-width: 250px
+
+    .services
+        margin-top: 50px
+        .slider
+            &__link
+                background-size: 125% 115%
+                background-position: 100% 20%
+        
+@media (max-width: 575px)
+    .product-category
+        &__list
+            padding: 0 10px
+        &__item
+            max-width: unset
+            &-img
+                max-height: 100px
+                max-width: 200px
+            &-title
+                font-size: 1.4rem
+                line-height: 1.7rem

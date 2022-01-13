@@ -274,7 +274,7 @@ $APPLICATION->SetTitle("Основные категории");
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "Y",
 		"USE_REVIEW" => "N",
-		"USE_SALE_BESTSELLERS" => "Y",
+		"USE_SALE_BESTSELLERS" => "N",
 		"USE_STORE" => "N",
 		"COMPONENT_TEMPLATE" => "catalog",
 		"SIDEBAR_SECTION_POSITION" => "right",
