@@ -3,7 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
-	"news", 
+	"bootstrap_v4", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -29,8 +29,9 @@ $APPLICATION->SetTitle("Новости");
 		"DETAIL_PAGER_TEMPLATE" => "",
 		"DETAIL_PAGER_TITLE" => "Страница",
 		"DETAIL_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "ATT_ADD_PRODUKT_TITLE",
+			1 => "ATT_ADD_PRODUKT",
+			2 => "",
 		),
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "N",
@@ -83,7 +84,7 @@ $APPLICATION->SetTitle("Новости");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => "news",
+		"COMPONENT_TEMPLATE" => "bootstrap_v4",
 		"TEMPLATE_THEME" => "blue",
 		"MEDIA_PROPERTY" => "",
 		"SLIDER_PROPERTY" => "",

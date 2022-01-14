@@ -8,6 +8,11 @@
     height: 1px;
     background-color: #020534;
 }
+.add-produkt-title {
+    margin-top: 40px;
+    font-size: 28px;
+    padding: 0 0 30px;
+}
 .news-item__date {
     display: inline-block;
     margin-top: 28px;

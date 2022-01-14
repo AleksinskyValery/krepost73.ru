@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/ymarket/index.php',
     'SORT' => 100,
   ),
-  9 => 
+  11 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',
@@ -32,6 +32,14 @@ $arUrlRewrite=array (
     'PATH' => '/store/index.php',
     'SORT' => 100,
   ),
+  12 => 
+  array (
+    'CONDITION' => '#^\\??(.*)#',
+    'RULE' => '&$1',
+    'ID' => 'bitrix:catalog.section',
+    'PATH' => '/local/templates/krepost/components/bitrix/news/news/bitrix/news.detail/.default/template.php',
+    'SORT' => 100,
+  ),
   1 => 
   array (
     'CONDITION' => '#^/rest/#',
@@ -40,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/rest/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  13 => 
   array (
     'CONDITION' => '#^/news/#',
     'RULE' => '',
