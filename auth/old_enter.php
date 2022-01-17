@@ -1,6 +1,6 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("enter");
+$APPLICATION->SetTitle("Вход");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:system.auth.form",
 	"e-market_auth_form",

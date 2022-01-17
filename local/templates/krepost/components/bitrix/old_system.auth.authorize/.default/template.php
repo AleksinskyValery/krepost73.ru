@@ -5,8 +5,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 <div class="bx-auth">
 <?if($arResult["AUTH_SERVICES"]):?>
-    <h1><?echo GetMessage("TITLE_AUTH")?></h1>
-
     <?
         ShowMessage($arParams["~AUTH_RESULT"]);
         ShowMessage($arResult['ERROR_MESSAGE']);

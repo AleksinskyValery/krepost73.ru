@@ -36,7 +36,7 @@ $this->setFrameMode(true);
 	?><h3 class="add-produkt-title"><?echo $arResult['PROPERTIES']['ATT_ADD_PRODUKT_TITLE']['VALUE'];?></h3><?
 	$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section", 
-	"section", 
+	"bootstrap_v4", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
@@ -56,10 +56,10 @@ $this->setFrameMode(true);
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"COMPATIBLE_MODE" => "N",
-		"COMPONENT_TEMPLATE" => "section",
+		"COMPONENT_TEMPLATE" => "bootstrap_v4",
 		"CONVERT_CURRENCY" => "N",
 		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
-		"DETAIL_URL" => "",
+		"DETAIL_URL" => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DISCOUNT_PERCENT_POSITION" => "top-left",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
@@ -106,7 +106,7 @@ $this->setFrameMode(true);
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Товары",
-		"PAGE_ELEMENT_COUNT" => "6",
+		"PAGE_ELEMENT_COUNT" => "3",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
 			0 => "BASE",
@@ -124,7 +124,7 @@ $this->setFrameMode(true);
 		"SECTION_CODE" => "",
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"SECTION_URL" => "",
+		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
 		"SECTION_USER_FIELDS" => array(
 			0 => "",
 			1 => "",
@@ -151,7 +151,9 @@ $this->setFrameMode(true);
 		"USE_ENHANCED_ECOMMERCE" => "N",
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
-		"USE_PRODUCT_QUANTITY" => "N"
+		"USE_PRODUCT_QUANTITY" => "N",
+		"SEF_RULE" => "",
+		"SECTION_CODE_PATH" => ""
 	),
 	false
 );
