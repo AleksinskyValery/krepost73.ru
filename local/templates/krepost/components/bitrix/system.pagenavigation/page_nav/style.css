@@ -1,0 +1,25 @@
+.slider__change {
+    position: relative;
+    width: 25px;
+    height: 46px;
+    display: inline-block;
+    background-color: transparent;
+    border: none;
+    border: 1px solid #ccc;
+}
+.slider__change::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 11px;
+    height: 9px;
+}
+.slider__change_left-end {
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+.slider__change_left-end::after {
+    background: url(/upload/img/main/icons/slider-change-left-end.svg) center center/cover no-repeat;
+}

@@ -36,7 +36,7 @@ $this->setFrameMode(true);
 	?><h3 class="add-produkt-title"><?echo $arResult['PROPERTIES']['ATT_ADD_PRODUKT_TITLE']['VALUE'];?></h3><?
 	$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section", 
-	"bootstrap_v4", 
+	"section", 
 	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
@@ -56,7 +56,7 @@ $this->setFrameMode(true);
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"COMPATIBLE_MODE" => "N",
-		"COMPONENT_TEMPLATE" => "bootstrap_v4",
+		"COMPONENT_TEMPLATE" => "section",
 		"CONVERT_CURRENCY" => "N",
 		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[]}",
 		"DETAIL_URL" => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
@@ -106,19 +106,19 @@ $this->setFrameMode(true);
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Товары",
-		"PAGE_ELEMENT_COUNT" => "3",
+		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
 		"PRICE_CODE" => array(
 			0 => "BASE",
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
-		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
-		"PRODUCT_DISPLAY_MODE" => "N",
+		"PRODUCT_BLOCKS_ORDER" => "props,quantityLimit,quantity,buttons,price,sku",
+		"PRODUCT_DISPLAY_MODE" => "Y",
 		"PRODUCT_ID_VARIABLE" => "id",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PRODUCT_QUANTITY_VARIABLE" => "quantity",
-		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false}]",
-		"PRODUCT_SUBSCRIPTION" => "Y",
+		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'3','BIG_DATA':false}]",
+		"PRODUCT_SUBSCRIPTION" => "N",
 		"RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],
 		"RCM_TYPE" => "personal",
 		"SECTION_CODE" => "",
@@ -141,7 +141,7 @@ $this->setFrameMode(true);
 		"SHOW_CLOSE_POPUP" => "Y",
 		"SHOW_DISCOUNT_PERCENT" => "Y",
 		"SHOW_FROM_SECTION" => "N",
-		"SHOW_MAX_QUANTITY" => "N",
+		"SHOW_MAX_QUANTITY" => "Y",
 		"SHOW_OLD_PRICE" => "Y",
 		"SHOW_PRICE_COUNT" => "1",
 		"SHOW_SLIDER" => "N",
@@ -151,9 +151,11 @@ $this->setFrameMode(true);
 		"USE_ENHANCED_ECOMMERCE" => "N",
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
-		"USE_PRODUCT_QUANTITY" => "N",
+		"USE_PRODUCT_QUANTITY" => "Y",
 		"SEF_RULE" => "",
-		"SECTION_CODE_PATH" => ""
+		"SECTION_CODE_PATH" => "",
+		"OFFER_ADD_PICT_PROP" => "-",
+		"MESS_SHOW_MAX_QUANTITY" => "В наличии"
 	),
 	false
 );

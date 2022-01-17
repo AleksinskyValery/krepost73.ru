@@ -21,6 +21,10 @@ use \Bitrix\Main\Localization\Loc;
  * @var string $buttonSizeClass
  * @var CatalogSectionComponent $component
  */
+// Фиксирую массив очереди вывода элементов карточки вне зависимости от настроек компонентов
+$arParams['PRODUCT_BLOCKS_ORDER'] = array('props','quantityLimit','quantity','buttons','price','sku');
+// Фиксирую текст для остатка вне зависимости от настроек компонентов
+$arParams['MESS_SHOW_MAX_QUANTITY'] = "В наличии";
 ?>
 
 <div class="product-preview__item">
@@ -243,7 +247,6 @@ use \Bitrix\Main\Localization\Loc;
 							{
 								?>
 								<div class="product-item-button-container">
-									1111111
 									<?
 									if ($showSubscribe)
 									{

@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("title", "Поиск товара");
-$APPLICATION->SetTitle("Найти товар");
+$APPLICATION->SetTitle("Поиск");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.search", 
 	"search-catalog", 
@@ -48,7 +48,7 @@ $APPLICATION->SetTitle("Найти товар");
 		"OFFERS_SORT_ORDER2" => "desc",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "Y",
+		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Товары",
@@ -69,9 +69,9 @@ $APPLICATION->SetTitle("Найти товар");
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
 		"SHOW_PRICE_COUNT" => "1",
-		"USE_LANGUAGE_GUESS" => "Y",
+		"USE_LANGUAGE_GUESS" => "N",
 		"USE_PRICE_COUNT" => "N",
-		"USE_PRODUCT_QUANTITY" => "N",
+		"USE_PRODUCT_QUANTITY" => "Y",
 		"USE_SEARCH_RESULT_ORDER" => "Y",
 		"USE_TITLE_RANK" => "Y",
 		"COMPONENT_TEMPLATE" => "search-catalog"
