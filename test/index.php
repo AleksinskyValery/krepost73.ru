@@ -19,6 +19,7 @@ $APPLICATION->SetTitle("test");
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
@@ -56,7 +57,7 @@ $APPLICATION->SetTitle("test");
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"NEWS_COUNT" => "2",
+		"NEWS_COUNT" => "1",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -83,15 +84,15 @@ $APPLICATION->SetTitle("test");
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
-		"COMPONENT_TEMPLATE" => ".default",
 		"VARIABLE_ALIASES" => array(
 			"SECTION_ID" => "SECTION_ID",
 			"ELEMENT_ID" => "ELEMENT_ID",
 		)
 	),
 	false
-);?>Пусто
+);?>
 </div>
-<div>
-</div>
- <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<div class="container">
+<br><br><br><br>
+Тестовая страница
+</div><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
