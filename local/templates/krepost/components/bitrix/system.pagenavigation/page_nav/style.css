@@ -10,11 +10,18 @@
     border: 1px solid #ccc;
     padding: 12px;
     color: #020534;
+    background: #ddd;
+    opacity: .5;
 }
 .page-nav-active {
     color: #fff;
     background-color: #020534;
     border: 1px solid #020534;
+    opacity: 1 !important;
+}
+a.page-nav, a .page-nav {
+    background: #fff;
+    opacity: 1;
 }
 .page-nav::after {
     content: '';

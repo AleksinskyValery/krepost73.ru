@@ -69,5 +69,5 @@ $this->setFrameMode(true);
 	),
 	$component
 );?>
-	<a style="margin:28px 0 0 10px;" href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a>
+	<a class="back_link" href="<?=$arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"]?>"><?=GetMessage("T_NEWS_DETAIL_BACK")?></a>
 </div>

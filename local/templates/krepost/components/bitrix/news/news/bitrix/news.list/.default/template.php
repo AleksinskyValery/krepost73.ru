@@ -13,11 +13,7 @@
 $this->setFrameMode(true);
 ?>
 <section class="news">
-    <div class="container">
-        <div class="slider__wrapper">
-            <ul class="slider" style="width: 100%; transform: translateX(0px); transition: all 0.75s ease 0s;">
-                <li class="slider__item" style="width: 1125px;">
-                    <ul class="row news__list">
+    <ul class="row news__list">
 
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
 	<?=$arResult["NAV_STRING"]?><br />
@@ -43,12 +39,8 @@ $this->setFrameMode(true);
         </div>
     </li>
 <?endforeach;?>
+    </ul>
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>
-	<br /><?=$arResult["NAV_STRING"]?>
+	<?=$arResult["NAV_STRING"]?>
 <?endif;?>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
 </section>

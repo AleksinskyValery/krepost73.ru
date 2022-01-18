@@ -33,6 +33,23 @@
 .news-item__descr p {
     margin-top: 15px;
 }
+.back_link {
+    margin-top: 28px;
+    background-color: #ffffff;
+    box-shadow: 2px 5px 15px rgb(0 0 0 / 30%);
+    border: 2px solid #e31e24;
+    border-radius: 5px;
+    padding: 17.5px 26px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: #e31e24;
+}
+.back_link:hover {
+    background-color: #bf0006;
+    border-color: transparent;
+    color: #fff;
+}
 @media (max-width: 991px) {
     .news-item__img {
         max-width: 380px;

@@ -28,7 +28,6 @@ $this->setFrameMode(true);
 <div class="news-item__descr">
 	<?echo $arResult["DETAIL_TEXT"];?>
 </div>
-<?// echo "<pre>"; print_r($arResult);echo "</pre>";?>
 
 <?if($arResult['PROPERTIES']['ATT_ADD_PRODUKT']['VALUE']):
 	global $arrFilter_add_produkt_items;
@@ -104,7 +103,7 @@ $this->setFrameMode(true);
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
 		"PAGER_SHOW_ALL" => "N",
 		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TEMPLATE" => "page_nav",
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
@@ -149,7 +148,7 @@ $this->setFrameMode(true);
 		"SLIDER_PROGRESS" => "N",
 		"TEMPLATE_THEME" => "",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_MAIN_ELEMENT_SECTION" => "N",
+		"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "Y",
 		"SEF_RULE" => "",
