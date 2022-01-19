@@ -8,6 +8,9 @@ $IsMainPage = $APPLICATION->GetCurPage(false) == SITE_DIR;
 <head>
 <?
 use Bitrix\Main\Page\Asset;
+CUtil::InitJSCore();
+CJSCore::Init(array("fx"));
+CJSCore::Init(array('ajax')); CJSCore::Init(array("popup"));
 $APPLICATION->ShowHead();
 // Подключение CSS
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/bootstrap.min.css');

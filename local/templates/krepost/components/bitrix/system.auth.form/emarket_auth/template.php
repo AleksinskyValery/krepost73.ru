@@ -1,5 +1,6 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 $this->setFrameMode(true);
+CJSCore::Init(array("jquery"));
 ?>
 <?if ($arResult["FORM_TYPE"] == "login") {?>
 		<?//echo '<pre>'; print_r($_SERVER['DOCUMENT_ROOT']);echo '</pre>';?>
