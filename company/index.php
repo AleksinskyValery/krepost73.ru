@@ -24,12 +24,10 @@ $APPLICATION->SetTitle("О компании");
 		</div>
 	</div>
 </div>
- </section>
-<section class="photogallery">
+ </section> <section class="photogallery">
 <div class="container">
 	<h2 class="titleH2 titleH2_mt">Фотогалерея</h2>
-	<div class="row">
-		 <?$APPLICATION->IncludeComponent(
+	 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"photogallery",
 	Array(
@@ -87,6 +85,5 @@ $APPLICATION->SetTitle("О компании");
 		"STRICT_SECTION_CHECK" => "N"
 	)
 );?>
-	</div>
 </div>
  </section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
