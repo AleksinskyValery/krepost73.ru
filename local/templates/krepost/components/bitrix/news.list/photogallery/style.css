@@ -1,102 +1,175 @@
-/* стили для корневого элемента слайдера */
-.slider {
+.photogallery__wrapper {
 	position: relative;
-	overflow: hidden;
-	max-width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
+	margin-top: 40px;
   }
-  
-  /* стили для wrapper */
-  .slider__wrapper {
-	position: relative;
-	overflow: hidden;
-	background-color: transparent;
+  .photogallery__descr {
+	display: inline-block;
+	margin-top: 7px;
   }
-  
-  /* стили для элемента, в котором непосредственно расположены элементы (слайды) */
-  .slider__items {
+  .swiper {
+	height: 100%;
+  }
+  .swiper-slide {
+	text-align: center;
+	font-size: 18px;
+	background: #fff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
 	display: flex;
-	transition: transform 0.5s ease;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
   }
-  
-  /* класс для отключения transition */
-  .transition-none {
-	transition: none;
-  }
-  
-  /* стили для элементов */
-  .slider__item {
-	flex: 0 0 100%;
-	max-width: 100%;
-	position: relative;
-  }
-  .slider__item  img{
+  .swiper-slide img {
 	max-width: 100%;
 	width: 100%;
-	height: auto;
+	max-height: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform .2s;
   }
-  
-  /* кнопки Prev и Next */
-  .slider__control {
+  .swiper-thumbs {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
+  }
+  .thumbs-wrap {
+	position: relative;
+  }
+  .thumbs__img {
+	user-select: none;
+	cursor: pointer;
+  }
+  .swiper-photogallery {
+	order: 2;
+	width: 100%;
+  }
+  .thumbs__arrow {
+	display: none;
+  }
+  @media only screen and (min-width: 576px) {
+	.swiper-photogallery {
+	  width: 83.3333333333%;
+	}
+	.thumbs-wrap {
+	  padding: 20px;
+	}
+	.thumbs__arrow {
+	  top: 50%;
+	  transform: translateY(-50%);
 	  content: '';
 	  position: absolute;
 	  display: block;
-	  top: 50%;
-	  transform: translateY(-50%);
 	  width: 35px;
 	  height: 35px;
 	  background-color: #fff;
 	  border-radius: 50%;
 	  border: none;
 	  box-shadow: 2px 2px 8px rgb(0 0 0 / 20%);
-	  z-index: 2;
-  }
-  
-  .slider__control_show {
-	display: flex;
-  }
-  
-  .slider__control:hover,
-  .slider__control:focus {
-	color: #fff;
-	text-decoration: none;
-	opacity: 0.7;
-  }
-  
-  .slider__control_prev {
-	left: 10px;
-  }
-  
-  .slider__control_next {
-	right: 10px;
-  }
-  
-  .slider__control::before {
+	  cursor: pointer;
+	  z-index: 3;
+	}
+	.thumbs__arrow::before {
 	  content: '';
 	  position: absolute;
 	  display: block;
 	  top: 50%;
 	  width: 10px;
 	  height: 10px;
-	  cursor: pointer;
-  }
-  
-  .slider__control_prev::before {
-	  left: 15px;
+	}
+	.thumbs__arrow_top {
+	  left: unset;
+	  right: 30px;
+	}
+	.thumbs__arrow_top::before {
+	  top: 50%;
+	  left: 10px;
+	  transform: translateY(-50%) rotate(45deg);
+	  border: 0;
+	  border-top: 1px solid #e31e24;
+	  border-right: 1px solid #e31e24;
+	}
+	.thumbs__arrow_bottom {
+	  left: 30px;
+	}
+	.thumbs__arrow_bottom::before {
+	  top: 50%;
+	  right: 10px;
 	  transform: translateY(-50%) rotate(-45deg);
+	  border: 0;
 	  border-top: 1px solid #e31e24;
 	  border-left: 1px solid #e31e24;
+	}
   }
-  
-  .slider__control_next::before {
-	  right: 15px;
-	  transform: translateY(-50%) rotate(-45deg);
+  @media only screen and (min-width: 992px) {
+	.photogallery__wrapper {
+	  display: flex;
+	  flex-direction: row;
+	  flex-wrap: nowrap;
+	}
+	.swiper-photogallery {
+	  order: 2;
+	  width: 100%;
+	  margin-left: 0!important;
+	}
+	.thumbs-wrap {
+	  padding: 40px 20px 40px 0;
+	  margin-left: 8.3333333333%;
+	}
+	.swiper-thumbs {
+	  order: 1;
+	  padding: 0px 7px;
+	  width: 174px;
+	  height: 384px;
+	}
+	.thumbs__img:hover {
+	  transform: scale(1.1);
+	}
+	.thumbs__arrow {
+	  left: calc(50% - 10px);
+	  transform: translateX(-50%);
+	}
+	.thumbs__arrow::before {
+	  top: 50%;
+	  width: 10px;
+	  height: 10px;
+	}
+	.thumbs__arrow_top {
+	  top: 0;
+	}
+	.thumbs__arrow_top::before {
+	  top: 60%;
+	  left: 13px;
+	  transform: translateY(-50%) rotate(45deg);
+	  border: 0;
+	  border-top: 1px solid #e31e24;
+	  border-left: 1px solid #e31e24;
+	}
+	.thumbs__arrow_bottom {
+	  bottom: 0;
+	  top: unset;
+	}
+	.thumbs__arrow_bottom::before {
+	  top: 45%;
+	  right: 12px;
+	  transform: translateY(-50%) rotate(45deg);
+	  border: 0;
 	  border-right: 1px solid #e31e24;
 	  border-bottom: 1px solid #e31e24;
+	}
   }
-  
-  /* Индикаторы */
-  .slider__indicators {
-  display: none;
+  @media only screen and (min-width: 1200px) {
+	.swiper-photogallery {
+	  width: 66.6666666667%;
+	}
+	.swiper-thumbs {
+		height: 430px;
+	  }
   }
