@@ -28,15 +28,14 @@ $this->setFrameMode(true);
              class="services__item-img">
         <h3 class="services__item-title"><?echo $arItem["NAME"]?></h3>
     </div>
-    <style>
-    .services__item-link::after {
-        background: url('<?echo $arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON"]["FILE_VALUE"]["SRC"]?>');
-        width: <?echo $arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON_WIDTH"]["VALUE"]?>px;
-        height: <?echo $arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON_HEIGHT"]["VALUE"]?>px;
-    }
-    </style>
     <div class="services__item-back">
-        <div class="services__item-link"></div>
+        <div class="services__item-link <?if (!$arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON"]["FILE_VALUE"]["SRC"]):?>services__item-link_invisible<?endif;?>">
+            <img src="<?=$arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON"]["FILE_VALUE"]["SRC"]?>"
+            class="services__item-link-image"
+            alt="icon"
+            width="<?=$arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON_WIDTH"]["VALUE"]?>px"
+            height="<?=$arItem["DISPLAY_PROPERTIES"]["SERVICE_ICON_HEIGHT"]["VALUE"]?>px" />
+        </div>
         <form action="#" method="post" class="services__form services__form_active services__form_main">
             <input type="text" placeholder="Ваше имя" name="services__name" maxlength="30" required="" data-input="" data-name="Имя">
             <input type="tel" placeholder="Телефон" name="services__phone" required="" data-input="" data-name="Номер телефона">

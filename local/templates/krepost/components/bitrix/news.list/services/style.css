@@ -1,0 +1,9 @@
+.services__item-link-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.services__item-link_invisible {
+    visibility: hidden;
+}
