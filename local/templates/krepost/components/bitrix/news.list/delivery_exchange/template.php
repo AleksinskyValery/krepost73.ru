@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 	?>
-    <li class="accordeon__item">
+    <li class="accordeon__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
         <details class="row accordeon__details">
             <summary class="row accordeon__summary">
             	<span class="col-sm-11 offset-sm-1 col-10 offset-2 accordeon__title"><?echo $arItem["NAME"]?></span>
