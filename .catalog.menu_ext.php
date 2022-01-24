@@ -2,7 +2,7 @@
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 global $APPLICATION; 
 $aMenuLinksExt = $APPLICATION->IncludeComponent(
-	"bitrix:menu.sections", 
+	"agatech:menu.sections", 
 	"", 
 	array(
 		"CACHE_TIME" => "36000000",

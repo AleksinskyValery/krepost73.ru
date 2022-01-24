@@ -18,6 +18,7 @@ foreach ($arResult['SECTIONS'] as &$arSection):
 	$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 	$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 	?>
+	<?// echo "<pre>"; print_r($arSection);echo "</pre>";?>
 	<li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>" class="product-category__item">
 		<a href="<? echo $arSection['SECTION_PAGE_URL']; ?>" class="product-category__link">
 			<img src="<?if ($arSection['PICTURE']['SRC'])

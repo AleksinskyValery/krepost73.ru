@@ -3,6 +3,7 @@ All results:<br>
 <?echo "<pre>"; print_r($arResult);echo "</pre>";?>
 
 <?echo "<pre>"; print_r($arItem);echo "</pre>";?>
+<?echo "<pre style='position:absolute;top:0;left:0;color:#000;background:#fff;z-index:10000;'>"; print_r($arResult);echo "</pre>";?>
 
 Single kode:<br>
 
