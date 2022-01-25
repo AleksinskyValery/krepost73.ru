@@ -46,6 +46,7 @@ if($this->StartResultCache())
 			"ID",
 			"DEPTH_LEVEL",
 			"NAME",
+			"PICTURE",
 			"SECTION_PAGE_URL",
 			"UF_ICON"
 		));
@@ -57,10 +58,11 @@ if($this->StartResultCache())
 		{
 			$arResult["SECTIONS"][] = array(
 				"ID" => $arSection["ID"],
+				"PICTURE" => $arSection["PICTURE"],
 				"DEPTH_LEVEL" => $arSection["DEPTH_LEVEL"],
 				"~NAME" => $arSection["~NAME"],
 				"~SECTION_PAGE_URL" => $arSection["~SECTION_PAGE_URL"],
-				"UF_ICON" => $arSection["~UF_ICON"], // добавляем для вывода пользовательского поля UF_ICON
+				"UF_ICON" => $arSection["~UF_ICON"],
 			);
 			$arResult["ELEMENT_LINKS"][$arSection["ID"]] = array();
 		}
@@ -144,6 +146,7 @@ foreach($arResult["SECTIONS"] as $arSection)
 			"PICTURE" => $arSection["PICTURE"],
 			"IS_PARENT" => false,
 			"DEPTH_LEVEL" => $arSection["DEPTH_LEVEL"],
+			"UF_ICON" => $arSection["UF_ICON"],
 			'icon' => $icon,
 		),
 	);

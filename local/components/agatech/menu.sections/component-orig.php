@@ -47,7 +47,6 @@ if($this->StartResultCache())
 			"DEPTH_LEVEL",
 			"NAME",
 			"SECTION_PAGE_URL",
-			"UF_ICON"
 		));
 		if($arParams["IS_SEF"] !== "Y")
 			$rsSections->SetUrlTemplates("", $arParams["SECTION_URL"]);
@@ -60,7 +59,6 @@ if($this->StartResultCache())
 				"DEPTH_LEVEL" => $arSection["DEPTH_LEVEL"],
 				"~NAME" => $arSection["~NAME"],
 				"~SECTION_PAGE_URL" => $arSection["~SECTION_PAGE_URL"],
-				"UF_ICON" => $arSection["~UF_ICON"], // добавляем для вывода пользовательского поля UF_ICON
 			);
 			$arResult["ELEMENT_LINKS"][$arSection["ID"]] = array();
 		}
@@ -125,26 +123,16 @@ foreach($arResult["SECTIONS"] as $arSection)
 	if ($menuIndex > 0)
 		$aMenuLinksNew[$menuIndex - 1][3]["IS_PARENT"] = $arSection["DEPTH_LEVEL"] > $previousDepthLevel;
 	$previousDepthLevel = $arSection["DEPTH_LEVEL"];
+
 	$arResult["ELEMENT_LINKS"][$arSection["ID"]][] = urldecode($arSection["~SECTION_PAGE_URL"]);
-	$icon = '';
-	if(
-		$arSection["UF_ICON"]
-		&& ($iconFile=\CFile::GetFileArray($arSection["UF_ICON"]))
-		&& file_exists($_SERVER['DOCUMENT_ROOT'].$iconFile['SRC'])
-	)
-	{
-		$icon = file_get_contents($_SERVER['DOCUMENT_ROOT'].$iconFile['SRC']);
-	}
 	$aMenuLinksNew[$menuIndex++] = array(
 		htmlspecialcharsbx($arSection["~NAME"]),
 		$arSection["~SECTION_PAGE_URL"],
 		$arResult["ELEMENT_LINKS"][$arSection["ID"]],
 		array(
 			"FROM_IBLOCK" => true,
-			"PICTURE" => $arSection["PICTURE"],
 			"IS_PARENT" => false,
 			"DEPTH_LEVEL" => $arSection["DEPTH_LEVEL"],
-			'icon' => $icon,
 		),
 	);
 }

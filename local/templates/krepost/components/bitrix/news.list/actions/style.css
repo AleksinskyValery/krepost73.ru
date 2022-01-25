@@ -1,0 +1,163 @@
+.actions > .d-flex {
+    margin-top: 80px;
+}
+.actions__list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 17px;
+    margin-top: 32px;
+    padding: 0;
+}
+.actions__list > .col-4 {
+    display: flex;
+    justify-content: center;
+}
+.actions__item {
+    max-width: 350px;
+    width: 100%;
+    box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+}
+.actions__item-img {
+    max-width: 350px;
+    width: 100%;
+    max-height: 194px;
+}
+.actions__item-date {
+    display: block;
+    margin-top: 11px;
+    padding: 0 11px;
+    font-weight: 300;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+}
+.actions__item-title {
+    margin-top: 7px;
+    padding: 0 11px 19px 11px;
+    min-height: 54px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+@media (max-width: 991px) {
+    .actions > .d-flex {
+        margin-top: 50px;
+    }
+    .actions__item-date {
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+    }
+    .actions__item-title {
+        font-size: 1.5rem;
+        line-height: 1.7rem;
+    }
+}
+@media (max-width: 767px) {
+    .actions .titleH1::after {
+        width: 15%;
+    }
+    .actions > .d-flex {
+        margin-top: 40px;
+    }
+    .actions__item-title {
+        padding: 0 11px 10px 11px;
+        min-height: 80px;
+    }
+}
+@media (max-width: 575px) {
+    .actions .titleH1::after {
+        width: 20%;
+    }
+    .actions .titleH2::after {
+        width: 50%;
+    }
+    .actions > .d-flex {
+        margin-top: 30px;
+    }
+    .actions__item {
+        max-width: unset;
+    }
+    .actions__item-title {
+        min-height: unset;
+    }
+    .actions__item-img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+.select {
+    display: inline-block;
+    position: relative;
+    margin-left: 28px;
+    width: 285px;
+}
+.select_active .select__header {
+    border-radius: 5px 5px 0 0;
+}
+.select_active .select__header::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+.select_active .select__body {
+    display: block;
+}
+.select__text {
+    font-weight: 300;
+    color: #747474;
+}
+.select__header {
+    position: relative;
+    padding: 10px 55px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.select__header::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+    width: 11px;
+    height: 7px;
+    background: url(/upload/img/main/icons/select-arrow.svg) center center/cover no-repeat;
+    pointer-events: none;
+    transition-duration: 0.3s;
+}
+.select__body {
+    display: none;
+    position: absolute;
+    top: 41px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+}
+.select__item {
+    padding: 10px 55px;
+    cursor: pointer;
+    background-color: #fff;
+}
+@media (min-width: 992px) {
+    .select__item:hover {
+        background-color: #020534;
+        color: #fff;
+    }
+    .select__item:active {
+        opacity: 0.6;
+    }
+}
+.select__item:last-child {
+    border-radius: 0 0 5px 5px;
+}
+@media (max-width: 991px) {
+    .select {
+        display: block;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+}
+@media (max-width: 575px) {
+    .select {
+        margin-top: 10px;
+    }
+}
