@@ -63,8 +63,11 @@ $APPLICATION->SetTitle("Акции");
 	)
 );?>
 <h2 class="titleH2 titleH2_mt">Лидеры продаж<a class="anchor" id="hit" ></a></h2>
- <?$APPLICATION->IncludeComponent("codeblogpro:sort.panel", "sort-order", array(
-	"CACHE_TIME" => "36000000",
+ <?$APPLICATION->IncludeComponent(
+	"codeblogpro:sort.panel", 
+	"different_sort-order", 
+	array(
+		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"FIELDS_CODE" => array(
 			0 => "created",
@@ -76,25 +79,20 @@ $APPLICATION->SetTitle("Акции");
 		"PRICE_CODE" => array(
 			0 => "1",
 		),
-		"PROPERTY_CODE" => "",
+		"PROPERTY_CODE" => array(
+		),
 		"SORT_NAME" => "SORT",
 		"SORT_ORDER" => array(
 			0 => "asc",
 			1 => "desc",
 		),
-		"COMPONENT_TEMPLATE" => "sort-order"
+		"COMPONENT_TEMPLATE" => "different_sort-order"
 	),
 	false,
 	array(
-	"ACTIVE_COMPONENT" => "N"
+		"ACTIVE_COMPONENT" => "Y"
 	)
 );?>
-<?if (
-    isset($_GET["sort"]) && isset($_GET["method"]) && (
-		$_GET["sort"] == "catalog_PRICE_1")){
-       $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
-       $arParams["ELEMENT_SORT_ORDER"] = $_GET["method"];
-}?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section", 
 	"section-hit", 
@@ -126,9 +124,9 @@ $APPLICATION->SetTitle("Акции");
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_COMPARE" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"ELEMENT_SORT_FIELD" => $sortField,
+		"ELEMENT_SORT_FIELD" => $SORT,
 		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER" => $sortOrder,
+		"ELEMENT_SORT_ORDER" => $ORDER,
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"ENLARGE_PRODUCT" => "STRICT",
 		"FILTER_NAME" => "arrFilter",
