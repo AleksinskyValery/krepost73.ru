@@ -1,0 +1,30 @@
+.hit {
+    margin-top: 55px;
+}
+.hit .product-preview__list {
+    margin-top: 43px;
+}
+.things-to-know__wrapper {
+    margin-top: 47px;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    letter-spacing: .03em;
+}
+.things-to-know__wrapper p:not(:first-child) {
+    margin-top: 15px;
+}
+.btn-lazy {
+    margin-top: 40px;
+    background-color: #E31E24;
+    box-shadow: 2px 5px 15px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    border: none;
+    padding: 17.5px 48px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+.btn-lazy:hover {
+    background-color: #BF0006;
+}

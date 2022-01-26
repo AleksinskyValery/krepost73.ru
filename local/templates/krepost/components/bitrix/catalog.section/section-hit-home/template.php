@@ -22,39 +22,6 @@ use \Bitrix\Main\Localization\Loc;
 
 $this->setFrameMode(true);
 
-// Сортировка
-?>
-<!--
-<div class="d-flex justify-content-between flex-wrap"><div>
-    <span class="select__text">Сортировать по:</span>
-    <div class="select">
-        <div class="select__header">
-            <span class="select__current">по умолчанию</span>
-        </div>
-        <ul class="select__body">
-            <li class="select__item">сначала дешёвые</li>
-            <li class="select__item">сначала дорогие</li>
-            
-        </ul>
-    </div>
-</div></div>
-<script>
-toggleSelect({
-        selectSelector: '.actions .select',
-       selectActiveClass: 'select_active',
-       selectHeaderSelector: '.actions .select__header',
-       selectBodySelector: '.actions .select__body',
-       selectCurrentSelector: '.actions .select__current'
-   });
-</script>
-
-<a <?if ($_GET["sort"] == "catalog_PRICE_1"):?> class="active" <?endif;?> href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=catalog_PRICE_1&method=ASC">цена по возрастанию</a> 
-<a <?if ($_GET["sort"] == "catalog_PRICE_1"):?> class="active" <?endif;?> href="<?=$arResult["SECTION_PAGE_URL"]?>?sort=catalog_PRICE_1&method=DESC">цена по убыванию</a> 
--->
-<?php
-// Конец сортировки
-
-
 if (!empty($arResult['NAV_RESULT']))
 {
 	$navParams =  array(
@@ -234,6 +201,7 @@ $themeClass = isset($arParams['TEMPLATE_THEME']) ? ' bx-'.$arParams['TEMPLATE_TH
 					$this->AddEditAction($uniqueId, $item['EDIT_LINK'], $elementEdit);
 					$this->AddDeleteAction($uniqueId, $item['DELETE_LINK'], $elementDelete, $elementDeleteParams);
 				}
+				
 
 				foreach ($arResult['ITEM_ROWS'] as $rowData)
 				{

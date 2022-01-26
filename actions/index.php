@@ -63,19 +63,42 @@ $APPLICATION->SetTitle("Акции");
 	)
 );?>
 <h2 class="titleH2 titleH2_mt">Лидеры продаж<a class="anchor" id="hit" ></a></h2>
- <?
-$sortField = 'ID'; // поле сортировки по умолчанию
-$sortOrder = 'ASC'; // направление сортировки по умолчанию
-if (
-    isset($_GET["sort"]) && isset($_GET["method"]) && ($_GET["sort"] == "catalog_PRICE_1")){
-      $sortField = $_GET["sort"];
-      $sortOrder = $_GET["method"];
-  }
-
-?> <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	"section-hit",
-	Array(
+ <?$APPLICATION->IncludeComponent("codeblogpro:sort.panel", "sort-order", array(
+	"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"FIELDS_CODE" => array(
+			0 => "created",
+		),
+		"IBLOCK_ID" => "16",
+		"IBLOCK_TYPE" => "1c_catalog",
+		"INCLUDE_SORT_TO_SESSION" => "Y",
+		"ORDER_NAME" => "ORDER",
+		"PRICE_CODE" => array(
+			0 => "1",
+		),
+		"PROPERTY_CODE" => "",
+		"SORT_NAME" => "SORT",
+		"SORT_ORDER" => array(
+			0 => "asc",
+			1 => "desc",
+		),
+		"COMPONENT_TEMPLATE" => "sort-order"
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "N"
+	)
+);?>
+<?if (
+    isset($_GET["sort"]) && isset($_GET["method"]) && (
+		$_GET["sort"] == "catalog_PRICE_1")){
+       $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
+       $arParams["ELEMENT_SORT_ORDER"] = $_GET["method"];
+}?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section", 
+	"section-hit", 
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
@@ -93,7 +116,7 @@ if (
 		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"COMPATIBLE_MODE" => "Y",
+		"COMPATIBLE_MODE" => "N",
 		"COMPONENT_TEMPLATE" => "section-hit",
 		"CONVERT_CURRENCY" => "N",
 		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[{\"CLASS_ID\":\"CondIBProp:16:54\",\"DATA\":{\"logic\":\"Equal\",\"value\":1}}]}",
@@ -114,7 +137,8 @@ if (
 		"IBLOCK_ID" => "16",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "Y",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LOAD_ON_SCROLL" => "N",
@@ -127,8 +151,11 @@ if (
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"OFFERS_FIELD_CODE" => array(0=>"",1=>"",),
-		"OFFERS_LIMIT" => "5",
+		"OFFERS_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"OFFERS_LIMIT" => "0",
 		"OFFERS_SORT_FIELD" => "sort",
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER" => "asc",
@@ -142,7 +169,9 @@ if (
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRICE_CODE" => array(0=>"BASE",),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"PRODUCT_DISPLAY_MODE" => "N",
@@ -157,7 +186,10 @@ if (
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
-		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_MODE" => "N",
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -178,9 +210,9 @@ if (
 		"SLIDER_PROGRESS" => "N",
 		"TEMPLATE_THEME" => "blue",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_MAIN_ELEMENT_SECTION" => "N",
+		"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "Y"
-	)
-);?>
-</section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+	),
+	false
+);?></section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

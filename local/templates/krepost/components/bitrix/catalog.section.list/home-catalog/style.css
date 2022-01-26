@@ -1,0 +1,118 @@
+.product-category .titleH1::after {
+  width: 23%;
+}
+.swiper-catalog-wrap {
+  margin-top: 78px;
+  padding: 0 52px;
+  position: relative;
+}
+.product-category__item {
+  position: relative;
+  padding: 13px 15px;
+  -webkit-box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.13);
+          box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.13);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.product-category__item:hover {
+  -webkit-box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-category__item:active {
+  opacity: 0.5;
+}
+
+.product-category__item-img {
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  max-width: 320px;
+  max-height: 140px;
+}
+
+.product-category__item-title {
+  margin-top: 125px;
+  font-weight: bold;
+  color: #020534;
+}
+
+.product-category__item-amount {
+  margin-top: 5px;
+  color: #666666;
+}
+
+@media (max-width: 1199px) {
+  .product-category__list {
+    gap: 30px;
+  }
+  .product-category__item {
+    max-width: 300px;
+  }
+  .product-category__item-img {
+    max-height: 120px;
+  }
+  .product-category__item-title {
+    margin-top: 95px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .product-category .titleH1::after {
+    width: 43%;
+  }
+  .product-category__item {
+    max-width: 220px;
+  }
+  .product-category__item-img {
+    max-height: 100px;
+    max-width: 150px;
+  }
+  .product-category__item-title {
+    margin-top: 75px;
+    height: 30px;
+    font-size: 1.3rem;
+    line-height: 1.6rem;
+  }
+  .product-category__item-amount {
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .product-category__list {
+    -webkit-column-gap: 40px;
+            column-gap: 40px;
+  }
+  .product-category__item {
+    max-width: 250px;
+  }
+  .services {
+    margin-top: 50px;
+  }
+  .services .slider__link {
+    background-size: 125% 115%;
+    background-position: 100% 20%;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-category__list {
+    padding: 0 10px;
+  }
+  .product-category__item {
+    max-width: unset;
+  }
+  .product-category__item-img {
+    max-height: 100px;
+    max-width: 200px;
+  }
+  .product-category__item-title {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+  }
+}
+/*# sourceMappingURL=style.css.map */

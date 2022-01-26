@@ -1,3 +1,8 @@
+.product-item-container {
+	padding: 0 4px 28px 4px;
+    border: 1px solid #efefef;
+    border-radius: 8px;
+}
 .product-preview__item {
     display: flex;
     flex-direction: column;

@@ -16,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/bitrix/services/ymarket/index.php',
     'SORT' => 100,
   ),
-  13 => 
+  15 => 
   array (
     'CONDITION' => '#^/catalog/#',
     'RULE' => '',

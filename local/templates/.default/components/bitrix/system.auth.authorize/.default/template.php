@@ -6,7 +6,6 @@ ShowMessage($arParams["~AUTH_RESULT"]);
 ShowMessage($arResult['ERROR_MESSAGE']);
 ?>
 <div class="bx-auth">
-1111111111111
 <?if($arResult["AUTH_SERVICES"]):?>
 	<div class="bx-auth-title"><?echo GetMessage("AUTH_TITLE")?></div>
 <?endif?>
