@@ -4,11 +4,12 @@
 
 use Bitrix\Main\Localization\Loc;
 
+
 if (!empty($arResult['SORT']['PROPERTIES'])) {
     $ceated = $arResult['SORT']['PROPERTIES']['created'];
     $price = $arResult['SORT']['PROPERTIES']['catalog_PRICE_1'];
     ?>
-    <?= Loc::getMessage('SORT_BY_VALUE') ?>:<br>
+<!--    <?= Loc::getMessage('SORT_BY_VALUE') ?>:<br>
     <a href="<?= $ceated['URL']; ?>">Переключение сортировки по новизне</a><br>
     <a href="<?= $price['URL']; ?>">Переключение сортировки по цене</a>
 <?}?>
@@ -19,29 +20,39 @@ if (!empty($arResult['SORT']['PROPERTIES'])) {
 
 <h3>Можно использовать для значения по умолчанию:</h3>
 <a href="/actions/?sort=created&order=asc">сначала новые</a><br>
-<a href="/actions/?sort=created&order=asc">сначала старые</a>
+<a href="/actions/?sort=created&order=desc">сначала старые</a> -->
 
-<!--
-<div class="d-flex justify-content-between flex-wrap"><div>
-    <span class="select__text">Сортировать по:</span>
-    <div class="select">
-        <div class="select__header">
-            <span class="select__current">по умолчанию</span>
+
+<div class="d-flex justify-content-between flex-wrap">
+    <div>
+        <span class="select__text">Сортировать по:</span>
+        <div class="select">
+            <div class="select__header">
+                <span class="select__current">по умолчанию</span>
+            </div>
+            <ul class="select__body">
+                <li class="select__item">
+                    <a href="/actions/?sort=catalog_PRICE_1&order=asc" class="select__link">сначала дешёвые</a>
+                </li>
+                <li class="select__item">
+                    <a href="/actions/?sort=catalog_PRICE_1&order=desc" class="select__link">сначала дорогие</a>
+                </li>
+                <li class="select__item">
+                    <a href="/actions/?sort=created&order=asc" class="select__link">сначала новые</a>
+                </li>
+                <li class="select__item">
+                    <a href="/actions/?sort=created&order=desc" class="select__link">сначала старые</a>
+                </li>
+            </ul>
         </div>
-        <ul class="select__body">
-            <li class="select__item">сначала дешёвые</li>
-            <li class="select__item">сначала дорогие</li>
-            
-        </ul>
     </div>
-</div></div>
+</div>
 <script>
 toggleSelect({
-        selectSelector: '.actions .select',
-       selectActiveClass: 'select_active',
-       selectHeaderSelector: '.actions .select__header',
-       selectBodySelector: '.actions .select__body',
-       selectCurrentSelector: '.actions .select__current'
-   });
+    selectSelector: '.actions .select',
+    selectActiveClass: 'select_active',
+    selectHeaderSelector: '.actions .select__header',
+    selectBodySelector: '.actions .select__body',
+    selectCurrentSelector: '.actions .select__current'
+});
 </script>
--->

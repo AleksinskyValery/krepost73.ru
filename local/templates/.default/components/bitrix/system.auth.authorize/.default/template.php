@@ -87,6 +87,7 @@ document.getElementById('bx_auth_secure').style.display = 'inline-block';
 
 	</form>
 </div>
+<?// echo "<pre>"; print_r($arResult);echo "</pre>";?>
 
 <script type="text/javascript">
 <?if ($arResult["LAST_LOGIN"] <> ''):?>
