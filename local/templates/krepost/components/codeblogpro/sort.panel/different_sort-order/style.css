@@ -1,21 +1,21 @@
-.actions > .d-flex {
+.actions > .container > .d-flex {
     margin-top: 80px;
     margin-bottom: 40px;
     position: relative;
     z-index: 20;
 }
 @media (max-width: 991px) {
-    .actions > .d-flex {
+    .actions > .container > .d-flex {
         margin-top: 50px;
     }
 }
 @media (max-width: 767px) {
-    .actions > .d-flex {
+    .actions > .container > .d-flex {
         margin-top: 40px;
     }
 }
 @media (max-width: 575px) {
-    .actions > .d-flex {
+    .actions > .container > .d-flex {
         margin-top: 30px;
     }
 }

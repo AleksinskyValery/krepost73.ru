@@ -245,6 +245,5 @@ $APPLICATION->ShowPanel();
 	<div class="container title_wrap">
 		<h1 class="titleH1 titleH1_mt"><? $APPLICATION->ShowTitle(false) ?></h1>
 	</div>
-	<div class="container">
 	<?endif?>
 <?}?>
