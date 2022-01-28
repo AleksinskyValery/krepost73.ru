@@ -1,9 +1,67 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Акции");
-?><section class="actions">
-Баннер<br>
- <br>
+?><section class="actions"><?$APPLICATION->IncludeComponent("bitrix:news.list", "wide-slider", Array(
+	"ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
+		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+		"AJAX_MODE" => "N",	// Включить режим AJAX
+		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
+		"DETAIL_URL" => "",	// URL страницы детального просмотра (по умолчанию - из настроек инфоблока)
+		"DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+		"DISPLAY_DATE" => "N",	// Выводить дату элемента
+		"DISPLAY_NAME" => "N",	// Выводить название элемента
+		"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
+		"DISPLAY_PREVIEW_TEXT" => "N",	// Выводить текст анонса
+		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+		"FIELD_CODE" => array(	// Поля
+			0 => "DETAIL_PICTURE",
+			1 => "",
+		),
+		"FILTER_NAME" => "",	// Фильтр
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
+		"IBLOCK_ID" => "22",	// Код информационного блока
+		"IBLOCK_TYPE" => "wide_sliders",	// Тип информационного блока (используется только для проверки)
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
+		"INCLUDE_SUBSECTIONS" => "N",	// Показывать элементы подразделов раздела
+		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+		"NEWS_COUNT" => "10",	// Количество новостей на странице
+		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
+		"PAGER_TITLE" => "Новости",	// Название категорий
+		"PARENT_SECTION" => "",	// ID раздела
+		"PARENT_SECTION_CODE" => "",	// Код раздела
+		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
+		"PROPERTY_CODE" => array(	// Свойства
+			0 => "ATT_PROMO_LINK",
+			1 => "",
+		),
+		"SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+		"SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
+		"SET_META_KEYWORDS" => "N",	// Устанавливать ключевые слова страницы
+		"SET_STATUS_404" => "N",	// Устанавливать статус 404
+		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
+		"SHOW_404" => "N",	// Показ специальной страницы
+		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
+		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
+		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
+		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
+		"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела для показа списка
+	),
+	false
+);?><br>
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"actions",
@@ -64,39 +122,30 @@ $APPLICATION->SetTitle("Акции");
 );?>
 <h2 class="titleH2 titleH2_mt">Лидеры продаж<a class="anchor" id="hit" ></a></h2>
  <?$APPLICATION->IncludeComponent(
-	"codeblogpro:sort.panel", 
-	"different_sort-order", 
-	array(
+	"codeblogpro:sort.panel",
+	"different_sort-order",
+	Array(
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"FIELDS_CODE" => array(
-			0 => "created",
-		),
+		"COMPONENT_TEMPLATE" => "different_sort-order",
+		"FIELDS_CODE" => array(0=>"created",),
 		"IBLOCK_ID" => "16",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SORT_TO_SESSION" => "Y",
 		"ORDER_NAME" => "ORDER",
-		"PRICE_CODE" => array(
-			0 => "1",
-		),
-		"PROPERTY_CODE" => array(
-		),
+		"PRICE_CODE" => array(0=>"1",),
+		"PROPERTY_CODE" => array(),
 		"SORT_NAME" => "SORT",
-		"SORT_ORDER" => array(
-			0 => "asc",
-			1 => "desc",
-		),
-		"COMPONENT_TEMPLATE" => "different_sort-order"
+		"SORT_ORDER" => array(0=>"asc",1=>"desc",)
 	),
-	false,
-	array(
-		"ACTIVE_COMPONENT" => "Y"
-	)
-);?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section", 
-	"section-hit", 
-	array(
+false,
+Array(
+	'ACTIVE_COMPONENT' => 'Y'
+)
+);?> <?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section",
+	"section-hit",
+	Array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
@@ -135,8 +184,7 @@ $APPLICATION->SetTitle("Акции");
 		"IBLOCK_ID" => "16",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"LABEL_PROP" => array(
-		),
+		"LABEL_PROP" => array(),
 		"LAZY_LOAD" => "Y",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LOAD_ON_SCROLL" => "N",
@@ -149,10 +197,7 @@ $APPLICATION->SetTitle("Акции");
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"OFFERS_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
+		"OFFERS_FIELD_CODE" => array(0=>"",1=>"",),
 		"OFFERS_LIMIT" => "0",
 		"OFFERS_SORT_FIELD" => "sort",
 		"OFFERS_SORT_FIELD2" => "id",
@@ -167,9 +212,7 @@ $APPLICATION->SetTitle("Акции");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
+		"PRICE_CODE" => array(0=>"BASE",),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"PRODUCT_DISPLAY_MODE" => "N",
@@ -184,10 +227,7 @@ $APPLICATION->SetTitle("Акции");
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
-		"SECTION_USER_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
+		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
 		"SEF_MODE" => "N",
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -211,6 +251,5 @@ $APPLICATION->SetTitle("Акции");
 		"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "Y"
-	),
-	false
+	)
 );?></section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
