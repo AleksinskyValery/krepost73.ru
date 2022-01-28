@@ -582,7 +582,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .promo__catalogue-list {
-  margin-top: 26px;
+  display: none;
 }
 
 .promo__catalogue-item {
@@ -591,6 +591,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (min-width: 992px) {
+  .promo__catalogue-list {
+    display: block;
+    margin-top: 26px;
+  }
   .promo__catalogue-item:hover .promo__catalogue-img path, .promo__catalogue-item:hover .promo__catalogue-img circle, .promo__catalogue-item:hover .promo__catalogue-img g {
     opacity: 1;
     fill: #E31E24;
