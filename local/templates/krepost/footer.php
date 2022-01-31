@@ -4,7 +4,7 @@
 </section>
     <?require_once("footer_404.php");
 } else {
-    if (CSite::InDir('/news/')||CSite::InDir('/catalog/')){ ?>
+    if (CSite::InDir('/news/')||CSite::InDir('/catalog/')||CSite::InDir('/auth/')){ ?>
      <?} else { ?>
         <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 

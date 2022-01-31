@@ -11,12 +11,12 @@ $APPLICATION->SetTitle("Регистрация");
 		"AUTH" => "Y",
 		"REQUIRED_FIELDS" => array(
 			0 => "EMAIL",
+			1 => "PERSONAL_PHONE",
 		),
 		"SET_TITLE" => "Y",
 		"SHOW_FIELDS" => array(
 			0 => "EMAIL",
-			1 => "TITLE",
-			2 => "PERSONAL_PHONE",
+			1 => "PERSONAL_PHONE",
 		),
 		"SUCCESS_PAGE" => "/personal/",
 		"USER_PROPERTY" => array(

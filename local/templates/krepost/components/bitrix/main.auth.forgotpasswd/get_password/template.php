@@ -10,15 +10,15 @@ Loc::loadMessages(__FILE__);
 \Bitrix\Main\Page\Asset::getInstance()->addCss(
 	'/bitrix/css/main/system.auth/flat/style.css'
 );
-
+?>
+<div class="container">
+<?
 if ($arResult['AUTHORIZED'])
 {
 	echo Loc::getMessage('MAIN_AUTH_PWD_SUCCESS');
 	return;
 }
 ?>
-
-<div class="bx-authform">
 	<?if ($arResult['ERRORS']):?>
 	<div class="alert alert-danger">
 		<? foreach ($arResult['ERRORS'] as $error)
