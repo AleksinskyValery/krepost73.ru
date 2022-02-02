@@ -103,8 +103,37 @@ endif;
 <?foreach ($arResult["SHOW_FIELDS"] as $FIELD):
 	switch ($FIELD)
 	{
-		case "PASSWORD": break;
-		case "CONFIRM_PASSWORD": break;
+		case "PASSWORD":
+		?>
+		<div class="row">
+			<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
+				<input class="form__input" size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" placeholder="<?=GetMessage("REGISTER_FIELD_PASSWORD")?>*" autocomplete="off" class="bx-auth-input" />
+					<?if($arResult["SECURE_AUTH"]):?>
+						<span class="bx-auth-secure" id="bx_auth_secure" title="<?echo GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
+							<div class="bx-auth-secure-icon"></div>
+						</span>
+						<noscript>
+							<span class="bx-auth-secure" title="<?echo GetMessage("AUTH_NONSECURE_NOTE")?>">
+								<div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
+							</span>
+						</noscript>
+					<script type="text/javascript">
+					document.getElementById('bx_auth_secure').style.display = 'inline-block';
+					</script>
+					<?endif?>
+			</div>
+		</div>
+		<?
+			break;
+		case "CONFIRM_PASSWORD":
+		?>
+		<div class="row">
+			<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
+				<input class="form__input" size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" placeholder="<?=GetMessage("REGISTER_FIELD_CONFIRM_PASSWORD")?>*" autocomplete="off" />
+			</div>
+		</div>
+		<?
+			break;
 		default:?>
 		<div class="row">
 			<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
@@ -114,29 +143,6 @@ endif;
 			
 	<?}?>
 <?endforeach?>
-	<div class="row">
-		<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
-			<input class="form__input" size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" placeholder="<?=GetMessage("REGISTER_FIELD_PASSWORD")?>*" autocomplete="off" class="bx-auth-input" />
-				<?if($arResult["SECURE_AUTH"]):?>
-					<span class="bx-auth-secure" id="bx_auth_secure" title="<?echo GetMessage("AUTH_SECURE_NOTE")?>" style="display:none">
-						<div class="bx-auth-secure-icon"></div>
-					</span>
-					<noscript>
-						<span class="bx-auth-secure" title="<?echo GetMessage("AUTH_NONSECURE_NOTE")?>">
-							<div class="bx-auth-secure-icon bx-auth-secure-unlock"></div>
-						</span>
-					</noscript>
-				<script type="text/javascript">
-				document.getElementById('bx_auth_secure').style.display = 'inline-block';
-				</script>
-				<?endif?>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
-			<input class="form__input" size="30" type="password" name="REGISTER[<?=$FIELD?>]" value="<?=$arResult["VALUES"][$FIELD]?>" placeholder="<?=GetMessage("REGISTER_FIELD_CONFIRM_PASSWORD")?>*" autocomplete="off" />
-		</div>
-	</div>
 
 <?/* Полный цикл из оригинального компонента
 

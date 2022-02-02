@@ -34,23 +34,25 @@ if ($arResult['AUTHORIZED'])
 	<?endif;?>
 
 	<h3 class="bx-title"><?= Loc::getMessage('MAIN_AUTH_PWD_HEADER');?></h3>
-
-	<p class="bx-authform-content-container"><?= Loc::getMessage('MAIN_AUTH_PWD_NOTE');?></p>
-
-	<form name="bform" method="post" target="_top" action="<?= POST_FORM_ACTION_URI;?>">
-
-		<div class="bx-authform-formgroup-container">
-			<div class="bx-authform-label-container"><?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_LOGIN');?></div>
-			<div class="bx-authform-input-container">
-				<input type="text" name="<?= $arResult['FIELDS']['login'];?>" maxlength="255" value="<?= \htmlspecialcharsbx($arResult['LAST_LOGIN']);?>" />
-			</div>
-			<span class="login-label"><?= Loc::getMessage('MAIN_AUTH_PWD_OR');?></span>
+	<div class="row">
+		<div class="col-lg-4 col-md-6 col-sm-8 col-12">
+			<p class="bx-authform-content-container"><?= Loc::getMessage('MAIN_AUTH_PWD_NOTE');?></p>
 		</div>
-
-		<div class="bx-authform-formgroup-container">
-			<div class="bx-authform-label-container"><?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_EMAIL');?></div>
-			<div class="bx-authform-input-container">
-				<input type="text" name="<?= $arResult['FIELDS']['email'];?>" maxlength="255" value="" />
+	</div>
+	<form name="bform" method="post" target="_top" action="<?= POST_FORM_ACTION_URI;?>" class="authorization__form form">
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-8 col-12">
+				<input class="form__input" type="text" name="<?= $arResult['FIELDS']['login'];?>" maxlength="255" value="<?= \htmlspecialcharsbx($arResult['LAST_LOGIN']);?>" placeholder="<?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_LOGIN');?>"/>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-8 col-12">
+				<p class="text-center"><?= Loc::getMessage('MAIN_AUTH_PWD_OR');?></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-8 col-12">
+				<input class="form__input" type="text" name="<?= $arResult['FIELDS']['email'];?>" maxlength="255" value=""  placeholder="<?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_EMAIL');?>"/>
 			</div>
 		</div>
 
@@ -67,26 +69,24 @@ if ($arResult['AUTHORIZED'])
 			</div>
 		<?endif;?>
 
-		<div class="bx-authform-formgroup-container">
-			<input type="submit" class="btn btn-primary" name="<?= $arResult['FIELDS']['action'];?>" value="<?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_SUBMIT');?>" />
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-8 col-12">
+				<input class="form__submit" type="submit" name="<?= $arResult['FIELDS']['action'];?>" value="<?= Loc::getMessage('MAIN_AUTH_PWD_FIELD_SUBMIT');?>" />
+			</div>
 		</div>
 
 		<?if ($arResult['AUTH_AUTH_URL'] || $arResult['AUTH_REGISTER_URL']):?>
 			<hr class="bxe-light">
 			<noindex>
 			<?if ($arResult['AUTH_AUTH_URL']):?>
-				<div class="bx-authform-link-container">
-					<a href="<?= $arResult['AUTH_AUTH_URL'];?>" rel="nofollow">
-						<?= Loc::getMessage('MAIN_AUTH_PWD_URL_AUTH_URL');?>
-					</a>
-				</div>
+				<a class="authorization__registration" href="<?= $arResult['AUTH_AUTH_URL'];?>" rel="nofollow">
+					<?= Loc::getMessage('MAIN_AUTH_PWD_URL_AUTH_URL');?>
+				</a>
 			<?endif;?>
 			<?if ($arResult['AUTH_REGISTER_URL']):?>
-				<div class="bx-authform-link-container">
-					<a href="<?= $arResult['AUTH_REGISTER_URL'];?>" rel="nofollow">
-						<?= Loc::getMessage('MAIN_AUTH_PWD_URL_REGISTER_URL');?>
-					</a>
-				</div>
+				<a class="authorization__registration" href="<?= $arResult['AUTH_REGISTER_URL'];?>" rel="nofollow">
+					<?= Loc::getMessage('MAIN_AUTH_PWD_URL_REGISTER_URL');?>
+				</a>
 			<?endif;?>
 			</noindex>
 		<?endif;?>

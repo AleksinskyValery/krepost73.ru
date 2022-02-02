@@ -131,7 +131,9 @@ foreach ($jsTemplates->getChildren() as $jsTemplate)
 }
 
 $displayModeClass = $arParams['DISPLAY_MODE'] === 'compact' ? ' basket-items-list-wrapper-compact' : '';
-
+?>
+<div class="container">
+<?
 if (empty($arResult['ERROR_MESSAGE']))
 {
 	if ($arParams['USE_GIFTS'] === 'Y' && $arParams['GIFTS_PLACE'] === 'TOP')
@@ -299,3 +301,5 @@ else
 {
 	ShowError($arResult['ERROR_MESSAGE']);
 }
+?>
+</div>

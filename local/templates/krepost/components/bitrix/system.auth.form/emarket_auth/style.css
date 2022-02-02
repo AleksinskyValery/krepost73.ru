@@ -6,7 +6,7 @@
     column-gap: 8px;
     height: 37px;
 }
-.header-info__user-item {
+.header-info__user-item, .header-info__user-item>div {
     display: flex;
 }
 .header-info__user-img-logout{

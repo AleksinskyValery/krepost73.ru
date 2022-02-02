@@ -1,0 +1,131 @@
+.form .row {
+    margin-top: 17px;
+}
+.form__input::-moz-placeholder {
+    color: #666;
+}
+.form__input:-ms-input-placeholder {
+    color: #666;
+}
+.form__input,
+.form__input::placeholder {
+    color: #666;
+}
+.form__input {
+    padding: 10px 33px;
+    width: 96%;
+    color: #020534;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+.form__submit {
+    background-color: #e31e24;
+    box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    border: none;
+    padding: 17.5px 26px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+    font-weight: 500;
+    color: #fff;
+    margin-top: 10px;
+    width: 96%;
+}
+@media (min-width: 992px) {
+    .form__submit:hover {
+        background-color: #bf0006;
+    }
+    .form__submit:active {
+        opacity: 0.7;
+    }
+}
+@media (max-width: 1199px) {
+    .form__submit {
+        padding: 13.5px 26px;
+    }
+}
+.form__policy-label,
+.form__save-card-label {
+    display: flex;
+    align-items: center;
+    margin-top: 23px;
+    cursor: pointer;
+}
+.form__policy-real,
+.form__save-card-real {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form__policy-real:checked + .form__policy-fake::before,
+.form__policy-real:checked + .form__save-card-fake::before,
+.form__save-card-real:checked + .form__policy-fake::before,
+.form__save-card-real:checked + .form__save-card-fake::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 6px;
+    background: url(/local/img/main/icons/check.svg) center no-repeat;
+}
+.form__policy-fake,
+.form__save-card-fake {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border: 1px solid silver;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+@media (min-width: 991px) {
+    .form__policy-fake:hover,
+    .form__save-card-fake:hover {
+        border: 1px solid #e31e24;
+    }
+    .form__policy-fake:active,
+    .form__save-card-fake:active {
+        opacity: 0.5;
+    }
+}
+.form__policy-title,
+.form__save-card-title {
+    display: inline-block;
+    margin-left: 23px;
+    max-width: 245px;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.03em;
+}
+.authorization__recovery {
+    margin-top: 30px;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    letter-spacing: .05em;
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    color: #666;
+}
+.authorization__registration {
+    display: block;
+    margin-top: 15px;
+    max-width: 175px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    letter-spacing: .05em;
+    color: #020534;
+}
+@media (min-width: 992px) {
+    .authorization__recovery:hover {
+        color: #e31e24;
+    }
+    .authorization__registration:hover {
+        text-decoration: underline;
+    }
+}

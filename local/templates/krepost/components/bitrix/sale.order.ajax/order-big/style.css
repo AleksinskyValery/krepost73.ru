@@ -215,15 +215,14 @@
 }
 
 .bx-soa-item-imgcontainer {
-	padding-top: 100%;
+	width: 40px;
+    height: 40px;
 	border: 1px solid #c0cfd9;
 	border-radius: 4px;
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-
-.bx-soa-item-content { }
 
 .bx-soa-item-title {
 	padding-bottom: 5px;
@@ -482,7 +481,6 @@
 	line-height: 20px;
 }
 
-.bx-soa-coupon-item { }
 
 .bx-soa-coupon-item strong:first-child { margin-left: 10px; }
 
@@ -799,8 +797,6 @@
 .bx-scu-container { overflow: hidden; }
 
 .bx-soa-item-content .bx-scu-container { max-width: 200px; }
-
-.bx-scu-block { }
 
 .bx-scu-list {
 	margin: 0;
@@ -1200,8 +1196,6 @@ ul.bx-soa-pp-list li {
 
 	.bx-soa-pp-item-container { border-right: none; }
 
-	.bx-soa-pp-desc-container { }
-
 	.bx-soa-pp-desc-container .bx-soa-pp-company-logo {
 		padding-top: 0;
 		width: 100%
@@ -1360,7 +1354,6 @@ hr.bxe-light {
 	border-radius: 16px;
 	background: #eff0f1;
 	color: #444;
-	vertical-align: middle;
 	font-size: 14px;
 	line-height: 32px;
 	transition: color .3s ease, background-color .3s ease, border-color .3s ease;
@@ -1372,7 +1365,6 @@ hr.bxe-light {
 	height: 32px;
 	border-radius: 16px;
 	color: #444;
-	vertical-align: middle;
 	text-decoration: none;
 	line-height: 32px;
 }
