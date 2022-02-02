@@ -4,6 +4,7 @@
 <?if(strlen($arResult["NAV_STRING"]) > 0):?>
 	<p><?=$arResult["NAV_STRING"]?></p>
 <?endif?>
+<div class="container">
 <table class="sale_personal_profile_list data-table">
 	<tr>
 		<th><?=GetMessage("P_ID")?><br /><?=SortingEx("ID")?></th>
@@ -27,3 +28,4 @@
 <?if(strlen($arResult["NAV_STRING"]) > 0):?>
 	<p><?=$arResult["NAV_STRING"]?></p>
 <?endif?>
+</div>

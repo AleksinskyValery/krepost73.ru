@@ -34,6 +34,7 @@ else
 		}
 	}
 	?>
+<div class="container">
 	<div class="container-fluid sale-order-detail">
 		<div class="sale-order-detail-title-container">
 			<h1 class="sale-order-detail-title-element">
@@ -960,6 +961,7 @@ else
 		</div><!--sale-order-detail-general-->
 		<a class="sale-order-detail-back-to-list-link-down" href="<?= $arResult["URL_TO_LIST"] ?>">&larr; <?= Loc::getMessage('SPOD_RETURN_LIST_ORDERS')?></a>
 	</div>
+</div>
 	<?
 	$javascriptParams = array(
 	"url" => CUtil::JSEscape($this->__component->GetPath().'/ajax.php'),
@@ -974,4 +976,3 @@ else
 <?
 }
 ?>
-

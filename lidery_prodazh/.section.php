@@ -1,7 +1,7 @@
 <?
-$sSectionName = "Лидеры продаж";
+$sSectionName = "Акции";
 $arDirProperties = Array(
-   "title" => "Лидеры продаж",
-   "keywords_inner" => "Лидеры продаж"
+   "title" => "Акции",
+   "keywords_inner" => "Акции"
 );
 ?>

@@ -37,7 +37,7 @@ $APPLICATION->SetTitle("Мой кабинет");
 		"ORDER_HISTORIC_STATUSES" => array(
 			0 => "F",
 		),
-		"PATH_TO_BASKET" => "/personal/basket/",
+		"PATH_TO_BASKET" => "/personal/cart/",
 		"PATH_TO_CATALOG" => "/catalog/",
 		"PATH_TO_CONTACT" => "/contacts/",
 		"PATH_TO_PAYMENT" => "/personal/order/payment",
@@ -64,7 +64,8 @@ $APPLICATION->SetTitle("Мой кабинет");
 			0 => "0",
 		),
 		"ORDER_RESTRICT_CHANGE_PAYSYSTEM" => array(
-			0 => "0",
+			0 => "P",
+			1 => "F",
 		),
 		"ORDER_DEFAULT_SORT" => "ID",
 		"ORDER_REFRESH_PRICES" => "N",

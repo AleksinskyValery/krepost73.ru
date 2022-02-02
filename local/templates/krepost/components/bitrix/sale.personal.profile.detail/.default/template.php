@@ -1,4 +1,5 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<div class="container">
 <a name="tb"></a>
 <a href="<?=$arParams["PATH_TO_LIST"]?>"><?=GetMessage("SPPD_RECORDS_LIST")?></a>
 <br /><br />
@@ -127,3 +128,4 @@
 <?else:?>
 	<?=ShowError($arResult["ERROR_MESSAGE"]);?>
 <?endif;?>
+</div>

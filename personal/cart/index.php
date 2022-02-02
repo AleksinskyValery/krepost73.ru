@@ -4,7 +4,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Корзина");
 ?><?$APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
-	"bootstrap_v4", 
+	"basket-big", 
 	array(
 		"COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
 		"COLUMNS_LIST" => array(
@@ -29,7 +29,7 @@ $APPLICATION->SetTitle("Корзина");
 		"SET_TITLE" => "Y",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"OFFERS_PROPS" => "",
-		"COMPONENT_TEMPLATE" => "bootstrap_v4",
+		"COMPONENT_TEMPLATE" => "basket-big",
 		"COLUMNS_LIST_EXT" => array(
 			0 => "PREVIEW_PICTURE",
 			1 => "DISCOUNT",

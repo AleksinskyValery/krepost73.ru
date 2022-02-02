@@ -105,8 +105,8 @@ if (empty($availablePages))
 	ShowError(Loc::getMessage("SPS_ERROR_NOT_CHOSEN_ELEMENT"));
 }
 else
-{
-	?>
+{?>
+<div class="container">
 	<div class="row">
 		<div class="col-md-12 sale-personal-section-index">
 			<div class="row sale-personal-section-row-flex">
@@ -132,6 +132,5 @@ else
 			</div>
 		</div>
 	</div>
-	<?
-}
-?>
+</div>
+<?}?>

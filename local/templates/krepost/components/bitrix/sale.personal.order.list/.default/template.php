@@ -59,6 +59,7 @@ else
 		}
 	}
 	?>
+<div class="container">
 <? 
 	// Бекап кода, блок не нужен.
 if(false) { ?>
@@ -550,3 +551,4 @@ if(false) { ?>
 	}
 }
 ?>
+</div>

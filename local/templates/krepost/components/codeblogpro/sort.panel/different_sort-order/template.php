@@ -18,16 +18,16 @@ if (!empty($arResult['SORT']['PROPERTIES'])) {
             </div>
             <ul class="select__body">
                 <li class="select__item">
-                    <a href="/actions/?sort=catalog_PRICE_1&order=asc" class="select__link">сначала дешёвые</a>
+                    <a href="<?$_SERVER["REQUEST_URI"]?>?sort=catalog_PRICE_1&order=asc" class="select__link">сначала дешёвые</a>
                 </li>
                 <li class="select__item">
-                    <a href="/actions/?sort=catalog_PRICE_1&order=desc" class="select__link">сначала дорогие</a>
+                    <a href="<?$_SERVER["REQUEST_URI"]?>?sort=catalog_PRICE_1&order=desc" class="select__link">сначала дорогие</a>
                 </li>
                 <li class="select__item">
-                    <a href="/actions/?sort=created&order=asc" class="select__link">сначала новые</a>
+                    <a href="<?$_SERVER["REQUEST_URI"]?>?sort=created&order=asc" class="select__link">сначала новые</a>
                 </li>
                 <li class="select__item">
-                    <a href="/actions/?sort=created&order=desc" class="select__link">сначала старые</a>
+                    <a href="<?$_SERVER["REQUEST_URI"]?>?sort=created&order=desc" class="select__link">сначала старые</a>
                 </li>
             </ul>
         </div>

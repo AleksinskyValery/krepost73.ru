@@ -10,6 +10,7 @@
     max-width: 255px;
     width: 100%;
     height: auto!important /*373px*/;
+	margin: 0 auto;
 }
 .product-preview__item-link {
     position: relative;
