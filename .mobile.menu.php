@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Главная", 
+		"/", 
+		Array(), 
+		Array("icon_link"=>"/upload/img/main/icons/header-mobile-home.svg"), 
+		"" 
+	),
+	Array(
+		"Каталог", 
+		"/catalog/", 
+		Array(), 
+		Array("icon_link"=>"/upload/img/main/icons/header-mobile-catalogue.svg"), 
+		"" 
+	),
+	Array(
+		"Профиль", 
+		"/personal/", 
+		Array(), 
+		Array("icon_link"=>"/upload/img/main/icons/header-mobile-lk.svg"), 
+		"" 
+	),
+	Array(
+		"Корзина", 
+		"/personal/cart/", 
+		Array(), 
+		Array("icon_link"=>"/upload/img/main/icons/header-mobile-cart.svg"), 
+		"" 
+	),
+	Array(
+		"Звонок", 
+		"tel:+78422265301", 
+		Array(), 
+		Array("icon_link"=>"/upload/img/main/icons/header-mobile-call.svg", "not_link"=>"tel:+78422265301"), 
+		"" 
+	)
+);
+?>
