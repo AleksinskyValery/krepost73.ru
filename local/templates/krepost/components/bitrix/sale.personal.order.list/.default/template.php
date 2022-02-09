@@ -11,7 +11,9 @@ Asset::getInstance()->addCss("/bitrix/components/bitrix/sale.order.payment.chang
 CJSCore::Init(array('clipboard'));
 
 Loc::loadMessages(__FILE__);
-
+?>
+<div class="container">
+<?
 if (!empty($arResult['ERRORS']['FATAL']))
 {
 	foreach($arResult['ERRORS']['FATAL'] as $error)
@@ -58,9 +60,6 @@ else
 			<?
 		}
 	}
-	?>
-<div class="container">
-<? 
 	// Бекап кода, блок не нужен.
 if(false) { ?>
 	<div class="row col-md-12 col-sm-12">

@@ -24,11 +24,9 @@ $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 
 if($arParams["SHOW_INPUT"] !== "N"):?>
 <form id="<?echo $CONTAINER_ID?>" action="<?echo $arResult["FORM_ACTION"]?>" class="bx-searchtitle header-info__search ">
-	<div class="input-group">
-		<input id="<?echo $INPUT_ID?>" type="text" placeholder="<?=GetMessage("CT_BST_SEARCH_PLACEHOLDER")?>" name="q" value="<?=htmlspecialcharsbx($_REQUEST["q"])?>" autocomplete="off" class="header-info__search-input"/>
-		<div class="header-info__search-btn-wrapper">
-			<button class="header-info__search-btn" type="submit" name="s"></button>
-		</div>
+	<input id="<?echo $INPUT_ID?>" type="text" placeholder="<?=GetMessage("CT_BST_SEARCH_PLACEHOLDER")?>" name="q" value="<?=htmlspecialcharsbx($_REQUEST["q"])?>" autocomplete="off" class="header-info__search-input"/>
+	<div class="header-info__search-btn-wrapper">
+		<button class="header-info__search-btn" type="submit" name="s"></button>
 	</div>
 </form>
 <?endif?>

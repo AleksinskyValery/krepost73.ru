@@ -440,10 +440,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (max-width: 1199px) {
-  .header-info__catalogue-open {
-    padding: 10px 20px;
-    width: 150px;
-  }
   .header-info__user-list {
     justify-content: center;
   }
@@ -466,22 +462,6 @@ input[type="number"]::-webkit-inner-spin-button {
     top: 0;
     width: 111px;
     height: 71px;
-  }
-  .header-info__catalogue {
-    width: auto;
-  }
-  .header-info__catalogue-open {
-    padding: 11px 14px;
-    width: 60px;
-  }
-  .header-info__catalogue-open-text {
-    display: none;
-  }
-  .header-info__catalogue-sublist {
-    display: none;
-  }
-  .header-info__catalogue-link:hover {
-    color: #ffffff;
   }
   .header-info__search {
     display: flex;

@@ -190,3 +190,29 @@
       opacity: 0.8;
     }
    }
+   
+   @media (max-width: 1199px) {
+    .header-info__catalogue-open {
+      padding: 10px 20px;
+      width: 150px;
+    }
+  }
+  
+  @media (max-width: 991px) {
+    .header-info__catalogue {
+      width: auto;
+    }
+    .header-info__catalogue-open {
+      padding: 11px 14px;
+      width: 60px;
+    }
+    .header-info__catalogue-open-text {
+      display: none;
+    }
+    .header-info__catalogue-sublist {
+      display: none;
+    }
+    .header-info__catalogue-link:hover {
+      color: #ffffff;
+    }
+  }

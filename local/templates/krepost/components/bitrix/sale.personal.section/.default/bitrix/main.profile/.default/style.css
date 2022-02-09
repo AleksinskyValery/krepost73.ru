@@ -1,44 +1,63 @@
-.bx_profile .main-profile-block-date-info{
-	margin-bottom: 15px;
+.main-profile-block-date-info strong {
+	color: #999999;
 }
-
-.bx_profile .main-profile-form-password-annotation{
-	font-family: Arial, Helvetica,sans-serif;
-	color: grey;
-	font-weight: lighter;
+.main-profile-form-control {
+	display: block;
+	width: 100%;
+	border-radius: 5px;
+	border-color: #C0C0C0;
+	border-collapse: collapse;
+	border-style: solid;
+	border-width: 1px;
+	padding: 14px 20px 11px 20px;
+	color: #2B2A29;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+	letter-spacing: 1px;
+}
+.main-profile-form-label {
 	font-size: 12px;
+	font-weight: normal;
+	line-height: 18px;
+	color: #999999;
 	margin-top: 15px;
-	margin-bottom: 0;
 }
-
-.bx_profile .main-profile-block-date-info, .bx_profile .form-group{
-	overflow-y: hidden;
+.main-profile-form-label.main-profile-password{
+	visibility: hidden;
 }
-@media (min-width: 992px)
-{
-	.text-md-right{
-		text-align: right;
-	}
-
-	.form-group{
-		display: table;
-		width: 100%;
-	}
-
-	.main-profile-form-label.text-md-right, input[class*="col-"] {
-		float: none !important;
-		display: table-cell;
-		vertical-align: middle;
-	}
+.password-annotation {
+	display: block;
+    font-size: 14px;
 }
-
-.bx_profile .main-profile-social-block{
-	margin-top: 40px;
+.main-profile-submit {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	Justify-content: space-between;
 }
-
-.bx_profile .form-group .form-control{
-	height: 40px;
+.main-profile-submit-save, .main-profile-submit-reset {
+	flex: 1;
+    box-shadow: 2px 5px 15px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    border: none;
+    padding: 17.5px 26px;
+    font-size: 16px;
+    line-height: 1.6rem;
+    font-weight: 500;
 }
-
-
-
+.main-profile-submit-save {
+	background-color: #E31E24;
+    color: #ffffff;
+}
+.main-profile-submit-reset {
+	margin-left: 15px;
+	background-color: #ffffff;
+    color: #E31E24;
+}
+.main-profile-submit-save:hover {
+    background-color: #BF0006;
+}
+.main-profile-submit-reset:hover {
+	background-color: #f0f0f0;
+}
