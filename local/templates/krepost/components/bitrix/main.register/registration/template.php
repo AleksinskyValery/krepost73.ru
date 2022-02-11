@@ -280,7 +280,7 @@ if ($arResult["USE_CAPTCHA"] == "Y")
 
 <div class="row">
 	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-9 col-12">
-		<p><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
+		<p class="register_pass_text"><?echo $arResult["GROUP_POLICY"]["PASSWORD_REQUIREMENTS"];?></p>
 	</div>
 </div>
 

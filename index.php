@@ -173,9 +173,9 @@ $APPLICATION->SetTitle("Главная");
 <div class="container">
 	<h2 class="titleH2">Лидеры продаж</h2>
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	"section-hit-home",
-	Array(
+	"bitrix:catalog.section", 
+	"section-hit-home", 
+	array(
 		"ACTION_VARIABLE" => "action",
 		"ADD_PICT_PROP" => "-",
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
@@ -187,7 +187,7 @@ $APPLICATION->SetTitle("Главная");
 		"AJAX_OPTION_JUMP" => "N",
 		"AJAX_OPTION_STYLE" => "Y",
 		"BACKGROUND_IMAGE" => "-",
-		"BASKET_URL" => "/personal/basket.php",
+		"BASKET_URL" => "/personal/cart/",
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "Y",
@@ -214,7 +214,8 @@ $APPLICATION->SetTitle("Главная");
 		"IBLOCK_ID" => "16",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
-		"LABEL_PROP" => array(),
+		"LABEL_PROP" => array(
+		),
 		"LAZY_LOAD" => "N",
 		"LINE_ELEMENT_COUNT" => "3",
 		"LOAD_ON_SCROLL" => "N",
@@ -227,7 +228,10 @@ $APPLICATION->SetTitle("Главная");
 		"MESS_NOT_AVAILABLE" => "Нет в наличии",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"OFFERS_FIELD_CODE" => array(0=>"",1=>"",),
+		"OFFERS_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"OFFERS_LIMIT" => "4",
 		"OFFERS_SORT_FIELD" => "sort",
 		"OFFERS_SORT_FIELD2" => "id",
@@ -242,7 +246,9 @@ $APPLICATION->SetTitle("Главная");
 		"PAGER_TITLE" => "Товары",
 		"PAGE_ELEMENT_COUNT" => "4",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRICE_CODE" => array(0=>"BASE",),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"PRODUCT_DISPLAY_MODE" => "N",
@@ -257,7 +263,10 @@ $APPLICATION->SetTitle("Главная");
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SECTION_URL" => "/catalog/#SECTION_CODE#/",
-		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_USER_FIELDS" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_MODE" => "N",
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
@@ -281,7 +290,8 @@ $APPLICATION->SetTitle("Главная");
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "Y"
-	)
+	),
+	false
 );?>
 </div>
 </section>
