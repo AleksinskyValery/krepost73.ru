@@ -702,7 +702,7 @@
 	display: inline-block;
 	clear: both;
 	margin-bottom: 2px;
-	background: #f42c2c;
+	background: #020534;
 	color: #fff;
 	vertical-align: middle;
 	text-align: center;
@@ -757,15 +757,15 @@
 /*RING*/
 .basket-item-label-ring {
 	box-sizing: border-box;
-	border-radius: 50%;
+	border-radius: 3px;
 	font-weight: bold;
 }
 
 .basket-item-label-ring.basket-item-label-small {
 	width: 40px;
-	height: 40px;
+	height: 24px;
 	font-size: 13px;
-	line-height: 40px;
+	line-height: 24px;
 }
 
 .basket-item-label-ring.basket-item-label-big {
@@ -777,10 +777,10 @@
 
 @media (max-width: 767px) {
 	.basket-item-label-ring.basket-item-label-small {
-		width: 24px;
-		height: 24px;
+		width: 32px;
+		height: 18px;
 		font-size: 8px;
-		line-height: 24px;
+		line-height: 18px;
 	}
 
 	.basket-item-label-ring.basket-item-label-big {

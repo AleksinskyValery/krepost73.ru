@@ -554,7 +554,6 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .promo {
   padding-top: 129px;
-  min-height: 100vh;
 }
 
 .promo > .container {
@@ -1244,7 +1243,7 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 100%;
     background-color: #ffffff;
     border-top: 1px solid #c4c4c4;
-    z-index: 5;
+    z-index: 15;
   }
   .header-mobile__menu {
     display: flex;
@@ -1300,4 +1299,66 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .search-without-catalogue .header-info__search-btn-wrapper {
   width: 10.25%;
+}
+.btn {
+  font-size: 1rem;
+}
+.btn-default,
+.btn-primary {
+  color: #fff;
+  background-color: #e31e24;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  padding: 17.5px 26px;
+}
+.btn-outline-secondary,
+.btn-link {
+  margin: 0 15px;
+  background-color: #ffffff;
+  color: #e31e24;
+  border-color: #e31e24;
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  font-weight: 500;
+  padding: 16.5px 26px;
+}
+.btn-default.focus,
+.btn-primary.focus,
+.btn-default:focus,
+.btn-primary:focus,
+.btn-default:hover,
+.btn-primary:hover {
+  color: #fff;
+  background-color: #BF0006;
+}
+.btn-link.focus,
+.btn-outline-secondary.focus,
+.btn-link:focus,
+.btn-outline-secondary:focus,
+.btn-link:hover,
+.btn-outline-secondary:hover {
+  color: #e31e24;
+  border-color: #e31e24;
+  background-color: #e0e0e0;
+}
+table.header {
+  position: relative;
+  width: auto;
+  box-shadow: none;
+  z-index: 100;
+}
+.form-control,
+.form-group input {
+  padding: 10px 33px;
+    width: 96%;
+    color: #020534;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+.bx-authform .form-group label {
+  width: 120px;
+}
+.callback_popap_1 {
+  cursor: pointer;
 }

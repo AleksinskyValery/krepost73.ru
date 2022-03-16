@@ -48,15 +48,15 @@ function initSliderWithNavigation({
     if (automatically) setInterval(toggleSlides, 7000);
 }
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     initSliderWithNavigation({
-        slideSelector: '.actions .slider__item',
+        slideSelector: '.wide-slider-section .slider__item',
         slideActive: 'slider__item_active',
-        buttonSelector: '.actions .slider__nav-btn',
+        buttonSelector: '.wide-slider-section .slider__nav-btn',
         buttonActive: 'slider__nav-btn_active',
-        buttonsParentSelector: '.actions .slider__nav-list',
-        automatically: true
+        buttonsParentSelector: '.wide-slider-section .slider__nav-list',
+        // automatically: true
     });
-}
+});
 
 

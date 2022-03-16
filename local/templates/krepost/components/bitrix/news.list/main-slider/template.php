@@ -16,24 +16,27 @@ $this->setFrameMode(true);
 <div class="slider main-slider">
     <div class="slider__wrapper">
         <div class="slider__items">
-<?foreach($arResult["ITEMS"] as $arItem):?>
-	<?
-	$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-	$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-	?>
-    <div class="slider__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-		<img src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"/>
-    </div>
-<?endforeach;?>
+            <?foreach($arResult["ITEMS"] as $arItem):?>
+                <?
+                $this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+                $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+                ?>
+                <div class="slider__item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
+                    <p class="slider__item_title"><?echo $arItem["NAME"]?></p>
+                    <img class="slider__item_img" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$arItem["PREVIEW_PICTURE"]["ALT"]?>"/>
+                    <div class="slider__item_link-wrapper">
+                        <a href="<?=$arItem['DISPLAY_PROPERTIES']['ATT_PROMO_LINK']['VALUE']?>" class="slider__item_link">Подробнее</a>
+                    </div>
+                </div>
+            <?endforeach;?>
 		</div>
     </div>
-    <a class="slider__control slider__control_prev" href="#" role="button" data-slide="prev"></a>
-    <a class="slider__control slider__control_next" href="#" role="button" data-slide="next"></a>
+    <button class="slider__control slider__control_prev" data-slide="prev"></button>
+    <button class="slider__control slider__control_next" data-slide="next"></button>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        // инициализация слайдера
-        var slider = new SimpleAdaptiveSlider('.slider', {
+        new SimpleAdaptiveSlider('.main-slider', {
             loop: true,
             autoplay: true,
             interval: 6000,

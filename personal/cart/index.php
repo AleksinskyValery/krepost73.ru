@@ -74,13 +74,15 @@ $APPLICATION->SetTitle("Корзина");
 		"DISPLAY_MODE" => "extended",
 		"PRICE_DISPLAY_MODE" => "Y",
 		"SHOW_DISCOUNT_PERCENT" => "Y",
-		"DISCOUNT_PERCENT_POSITION" => "bottom-right",
+		"DISCOUNT_PERCENT_POSITION" => "top-right",
 		"PRODUCT_BLOCKS_ORDER" => "props,sku,columns",
 		"USE_PRICE_ANIMATION" => "Y",
 		"LABEL_PROP" => array(
 		),
 		"EMPTY_BASKET_HINT_PATH" => "/catalog/",
-		"USE_ENHANCED_ECOMMERCE" => "N"
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"ADDITIONAL_PICT_PROP_24" => "-",
+		"ADDITIONAL_PICT_PROP_25" => "-"
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

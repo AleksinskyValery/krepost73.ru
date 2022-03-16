@@ -12,6 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<div class="news-detail">
 <?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
 	<time class="news-item__date" datetime="<?=$arResult["DISPLAY_ACTIVE_FROM"]?>"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></time>
 <?endif;?>
@@ -72,7 +73,7 @@ $this->setFrameMode(true);
 		"FILTER_NAME" => "arrFilter_add_produkt_items",
 		"HIDE_NOT_AVAILABLE" => "Y",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "Y",
-		"IBLOCK_ID" => "16",
+		"IBLOCK_ID" => "29",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -159,3 +160,4 @@ $this->setFrameMode(true);
 	false
 );
 endif?>
+</div>

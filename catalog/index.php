@@ -130,7 +130,7 @@ $APPLICATION->SetTitle("Основные категории");
 		"GIFTS_SHOW_OLD_PRICE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "L",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "Y",
-		"IBLOCK_ID" => "16",
+		"IBLOCK_ID" => "29",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "N",
 		"INSTANT_RELOAD" => "N",
@@ -282,6 +282,8 @@ $APPLICATION->SetTitle("Основные категории");
 		"SECTIONS_HIDE_SECTION_NAME" => "N",
 		"FILE_404" => "",
 		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
+		),
+		"LIST_PROPERTY_CODE_MOBILE" => array(
 		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",

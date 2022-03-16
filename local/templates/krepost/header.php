@@ -18,6 +18,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/bootstrap/mdb.min.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/main.css');
 Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/new.css');
 Asset::getInstance()->addString("<link href='//fonts.googleapis.com/css?family=Roboto:300,regular,500,700' rel='stylesheet' type='text/css'>");
+Asset::getInstance()->addString("<link href='//fonts.googleapis.com/css2?family=Oswald&display=swap' rel='stylesheet' type='text/css'>");
 // Подключение JS
 Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/appscripts.js');
 Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">');
@@ -53,12 +54,19 @@ $APPLICATION->ShowPanel();
 <?if ($GLOBALS["APPLICATION"]->GetCurPage() == "/"):?>
 <div class="col-lg-7 search-without-catalogue">
 <?$APPLICATION->IncludeComponent(
-	"bitrix:search.title",
-	"search-title",
-	Array(
-		"CATEGORY_0" => array(0=>"iblock_1c_catalog",),
+	"bitrix:search.title", 
+	"search-title", 
+	array(
+		"CATEGORY_0" => array(
+			0 => "iblock_main",
+			1 => "iblock_delivery",
+			2 => "iblock_1c_catalog",
+		),
 		"CATEGORY_0_TITLE" => "",
-		"CATEGORY_0_iblock_1c_catalog" => array(0=>"all",),
+		"CATEGORY_0_iblock_1c_catalog" => array(
+			0 => "29",
+			1 => "30",
+		),
 		"CHECK_DATES" => "N",
 		"CONTAINER_ID" => "title-search",
 		"CONVERT_CURRENCY" => "N",
@@ -69,15 +77,28 @@ $APPLICATION->ShowPanel();
 		"PREVIEW_HEIGHT" => "75",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"PREVIEW_WIDTH" => "75",
-		"PRICE_CODE" => array(0=>"BASE",),
+		"PRICE_CODE" => array(
+			0 => "BASE",
+		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"SHOW_INPUT" => "Y",
 		"SHOW_OTHERS" => "N",
 		"SHOW_PREVIEW" => "Y",
 		"TEMPLATE_THEME" => "",
 		"TOP_COUNT" => "5",
-		"USE_LANGUAGE_GUESS" => "Y"
-	)
+		"USE_LANGUAGE_GUESS" => "Y",
+		"COMPONENT_TEMPLATE" => "search-title",
+		"CATEGORY_0_iblock_main" => array(
+			0 => "4",
+			1 => "8",
+			2 => "9",
+			3 => "19",
+		),
+		"CATEGORY_0_iblock_delivery" => array(
+			0 => "all",
+		)
+	),
+	false
 );?>
 </div>
 <?else:?>
@@ -114,11 +135,14 @@ $APPLICATION->ShowPanel();
 	"search-title", 
 	array(
 		"CATEGORY_0" => array(
-			0 => "iblock_1c_catalog",
+			0 => "main",
+			1 => "iblock_main",
+			2 => "iblock_delivery",
+			3 => "iblock_1c_catalog",
 		),
 		"CATEGORY_0_TITLE" => "Каталог",
 		"CATEGORY_0_iblock_1c_catalog" => array(
-			0 => "16",
+			0 => "29",
 		),
 		"CHECK_DATES" => "N",
 		"CONTAINER_ID" => "title-search",
@@ -135,12 +159,24 @@ $APPLICATION->ShowPanel();
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"SHOW_INPUT" => "Y",
-		"SHOW_OTHERS" => "N",
+		"SHOW_OTHERS" => "Y",
 		"SHOW_PREVIEW" => "Y",
 		"TEMPLATE_THEME" => "",
 		"TOP_COUNT" => "5",
 		"USE_LANGUAGE_GUESS" => "Y",
-		"COMPONENT_TEMPLATE" => "search-title"
+		"COMPONENT_TEMPLATE" => "search-title",
+		"CATEGORY_OTHERS_TITLE" => "",
+		"CATEGORY_0_main" => array(
+		),
+		"CATEGORY_0_iblock_main" => array(
+			0 => "4",
+			1 => "8",
+			2 => "9",
+			3 => "19",
+		),
+		"CATEGORY_0_iblock_delivery" => array(
+			0 => "all",
+		)
 	),
 	false
 );?>

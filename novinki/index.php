@@ -108,10 +108,10 @@ Array(
 		"COMPATIBLE_MODE" => "N",
 		"COMPONENT_TEMPLATE" => "section-discount",
 		"CONVERT_CURRENCY" => "N",
-		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[{\"CLASS_ID\":\"CondIBProp:16:61\",\"DATA\":{\"logic\":\"Equal\",\"value\":1}}]}",
+		"CUSTOM_FILTER" => "{\"CLASS_ID\":\"CondGroup\",\"DATA\":{\"All\":\"AND\",\"True\":\"True\"},\"CHILDREN\":[{\"CLASS_ID\":\"CondIBProp:29:128\",\"DATA\":{\"logic\":\"Equal\",\"value\":1}}]}",
 		"DETAIL_URL" => "/catalog/#SECTION_CODE#/#ELEMENT_CODE#/",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"DISCOUNT_PERCENT_POSITION" => "top-left",
+		"DISCOUNT_PERCENT_POSITION" => "top-right",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_COMPARE" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
@@ -123,7 +123,7 @@ Array(
 		"FILTER_NAME" => "arrFilter",
 		"HIDE_NOT_AVAILABLE" => "Y",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "Y",
-		"IBLOCK_ID" => "16",
+		"IBLOCK_ID" => "29",
 		"IBLOCK_TYPE" => "1c_catalog",
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LABEL_PROP" => array(
@@ -201,7 +201,9 @@ Array(
 		"USE_ENHANCED_ECOMMERCE" => "N",
 		"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"USE_PRICE_COUNT" => "N",
-		"USE_PRODUCT_QUANTITY" => "Y"
+		"USE_PRODUCT_QUANTITY" => "Y",
+		"PROPERTY_CODE_MOBILE" => array(
+		)
 	),
 	false
 );?>

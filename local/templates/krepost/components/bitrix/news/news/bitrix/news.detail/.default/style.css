@@ -1,3 +1,6 @@
+.news-detail {
+    overflow: hidden;
+}
 .titleH1::after,
 .titleH2::after {
     content: "";

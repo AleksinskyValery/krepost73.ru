@@ -56,6 +56,7 @@ $arParams['MESS_SHOW_MAX_QUANTITY'] = "В наличии";
 <? else: ?>
 	</span>
 <? endif; ?>
+</a>
 <h4 class="product-preview__item-title titleH4">
 		<a class="product-preview__item-title-link" href="<?=$item['DETAIL_PAGE_URL']?>"><?=$item['NAME']?></a>
 </h4>

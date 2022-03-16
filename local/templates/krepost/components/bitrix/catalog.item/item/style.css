@@ -1,7 +1,6 @@
 .product-item-container {
-	padding: 0 4px 28px 4px;
-    border: 1px solid #efefef;
-    border-radius: 8px;
+	padding: 0 5px 25px 5px;
+    border-radius: 3px;
 }
 .product-preview__item {
     display: flex;
@@ -41,8 +40,6 @@
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;  
-	overflow: hidden;
-
 }
 .not-available {
     line-height: 76px;
@@ -340,6 +337,7 @@
 	height: 30px;
 	font-size: 14px;
 	line-height: 30px;
+	border-radius: 3px;
 }
 
 .product-item-big-card .product-item-label-ring.product-item-label-small {

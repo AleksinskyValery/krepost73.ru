@@ -38,7 +38,7 @@ $APPLICATION->SetTitle("Заказы");
 		"SHOW_VAT_PRICE" => "Y",
 		"USE_PREPAYMENT" => "N",
 		"USE_PRELOAD" => "Y",
-		"ALLOW_NEW_PROFILE" => "N",
+		"ALLOW_NEW_PROFILE" => "Y",
 		"SHOW_PAYMENT_SERVICES_NAMES" => "Y",
 		"SHOW_STORES_IMAGES" => "Y",
 		"ACTION_VARIABLE" => "soa-action",
@@ -52,7 +52,7 @@ $APPLICATION->SetTitle("Заказы");
 		),
 		"ADDITIONAL_PICT_PROP_16" => "-",
 		"ADDITIONAL_PICT_PROP_17" => "-",
-		"ALLOW_USER_PROFILES" => "N",
+		"ALLOW_USER_PROFILES" => "Y",
 		"TEMPLATE_THEME" => "red",
 		"SHOW_ORDER_BUTTON" => "final_step",
 		"SHOW_TOTAL_ORDER_BUTTON" => "N",
@@ -88,7 +88,9 @@ $APPLICATION->SetTitle("Заказы");
 		"PICKUP_MAP_TYPE" => "yandex",
 		"SHOW_COUPONS" => "N",
 		"HIDE_ORDER_DESCRIPTION" => "N",
-		"USE_ENHANCED_ECOMMERCE" => "N"
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"ADDITIONAL_PICT_PROP_24" => "-",
+		"ADDITIONAL_PICT_PROP_25" => "-"
 	),
 	false
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
